@@ -20,14 +20,14 @@
     <string-array name="quizQuestionsMenuItems">
         <item>Alle Quizfragen anzeigen</item>
         <item>Neue Quizfrage hinzufügenn</item>
-        <item>Remove Quiz Question</item>
+        <item>Quizfragen entfernen</item>
         <item>Zurück zum Hauptmenü</item>
     </string-array>
 
     <string-array name="quizTopicsMenuItems">
         <item>Alle Quizthemen anzeigen</item>
         <item>Neues Quizthema hinzufügen</item>
-        <item>Remove Quiz Topic</item>
+        <item>Quizthemen entfernen</item>
         <item>Zurück zum Hauptmenü</item>
     </string-array>
 
