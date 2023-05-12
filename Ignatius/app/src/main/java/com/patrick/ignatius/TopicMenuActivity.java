@@ -17,25 +17,27 @@ public class TopicMenuActivity extends AppCompatActivity {
         AdapterView.OnItemClickListener itemClickListener = new
                 AdapterView.OnItemClickListener() {
                     @Override
-                    // Main Menu setup
+
                     public void onItemClick(AdapterView<?> adapterView, View view,
                                             int position, long id) {
-                        // Show Quiz Topics Option
+                        // Show Quiz Questions option
                         if (position == 0) {
-
+                            Intent intent = new Intent(TopicMenuActivity.this,
+                                    ShowQuizTopics.class);
+                            startActivity(intent);
                         }
 
-                        // Add New Quiz Topic Option
+
+
+                        // Add New Question
                         if (position == 1) {
-
+                            Intent intent = new Intent(TopicMenuActivity.this,
+                                    AddQuizTopics.class);
+                            startActivity(intent);
 
                         }
-
-
-
-                        // Return to main Menu Button
+                        // Return to Main Menu option
                         if (position == 2) {
-
                             finish();
                         }
 

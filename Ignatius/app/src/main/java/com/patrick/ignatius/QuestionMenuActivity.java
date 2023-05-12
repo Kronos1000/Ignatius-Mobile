@@ -2,6 +2,7 @@ package com.patrick.ignatius;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,14 +22,18 @@ public class QuestionMenuActivity extends AppCompatActivity {
                                             int position, long id) {
                         // Show Quiz Questions option
                         if (position == 0) {
-
+                            Intent intent = new Intent(QuestionMenuActivity.this,
+                                   ShowQuizQuestions.class);
+                            startActivity(intent);
                         }
 
 
 
                         // Add New Question
                         if (position == 1) {
-
+                            Intent intent = new Intent(QuestionMenuActivity.this,
+                                   AddQuizQuestions.class);
+                            startActivity(intent);
 
                         }
                         // Return to Main Menu option

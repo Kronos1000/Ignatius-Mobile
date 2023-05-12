@@ -45,6 +45,6 @@
         android:layout_gravity="right"
 
 
-        android:src="@drawable/manifying_glass" />
+        android:src="@drawable/magnifying_glass" />
 
 </LinearLayout>

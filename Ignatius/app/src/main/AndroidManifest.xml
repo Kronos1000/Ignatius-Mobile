@@ -12,6 +12,18 @@
         android:theme="@style/Theme.Ignatius"
         tools:targetApi="31">
         <activity
+            android:name=".AddQuizTopics"
+            android:exported="false" />
+        <activity
+            android:name=".AddQuizQuestions"
+            android:exported="false" />
+        <activity
+            android:name=".ShowQuizTopics"
+            android:exported="false" />
+        <activity
+            android:name=".ShowQuizQuestions"
+            android:exported="false" />
+        <activity
             android:name=".AppBar"
             android:exported="false" />
         <activity
