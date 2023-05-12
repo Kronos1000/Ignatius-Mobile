@@ -32,14 +32,22 @@ public class QuestionMenuActivity extends AppCompatActivity {
                         // Add New Question
                         if (position == 1) {
                             Intent intent = new Intent(QuestionMenuActivity.this,
-                                   AddQuizQuestions.class);
+                                  RemoveQuizQuestion.class);
                             startActivity(intent);
 
                         }
                         // Return to Main Menu option
                         if (position == 2) {
+                            Intent intent = new Intent(QuestionMenuActivity.this,
+                                    RemoveQuizQuestion.class);
+                            startActivity(intent);
+                        }
+
+                        if (position == 3) {
                             finish();
                         }
+
+
 
 
 

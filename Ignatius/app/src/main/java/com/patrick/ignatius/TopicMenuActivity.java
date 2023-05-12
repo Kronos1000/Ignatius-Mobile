@@ -36,8 +36,15 @@ public class TopicMenuActivity extends AppCompatActivity {
                             startActivity(intent);
 
                         }
-                        // Return to Main Menu option
+
                         if (position == 2) {
+                            Intent intent = new Intent(TopicMenuActivity.this,
+                                   RemoveQuizTopic.class);
+                            startActivity(intent);
+
+                        }
+                        // Return to Main Menu option
+                        if (position == 3) {
                             finish();
                         }
 
