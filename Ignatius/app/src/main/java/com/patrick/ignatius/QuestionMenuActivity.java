@@ -32,7 +32,7 @@ public class QuestionMenuActivity extends AppCompatActivity {
                         // Add New Question
                         if (position == 1) {
                             Intent intent = new Intent(QuestionMenuActivity.this,
-                                  RemoveQuizQuestion.class);
+                                AddQuizQuestions.class);
                             startActivity(intent);
 
                         }

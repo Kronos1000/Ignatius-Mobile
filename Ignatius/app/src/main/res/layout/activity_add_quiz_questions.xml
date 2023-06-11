@@ -29,8 +29,55 @@
 
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/add_quiz_question_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_new_quiz_question_title"
+        android:textSize="24sp"
+        android:textAlignment="center" />
 
 
+
+    <EditText
+        android:id="@+id/quiz_topic_form_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quiz Topic" />
+    <EditText
+        android:id="@+id/quiz_question_form_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Question" />
+
+    <EditText
+        android:id="@+id/quiz_answer1_form_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Answer 1" />
+
+    <EditText
+        android:id="@+id/quiz_answer2_form_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Answer 2" />
+    <EditText
+        android:id="@+id/quiz_answer3_form_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Answer 3" />
+    <EditText
+        android:id="@+id/quiz_correct_answer_form_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correct answer" />
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Question"
+        android:backgroundTint="#27bf1e"
+        android:onClick="addQuestions"/>
 
 
 </LinearLayout>
