@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Ignatius</string>
+    <string name="add_new_quiz_question_title">Add New Quiz Question</string>
+
+    <string-array name="mainMenuItems">
+        <item> Quiz Me</item>
+        <item>Quiz Questions</item>
+
+        <item>Exit Application</item>
+    </string-array>
+
+
+
+
+
+
+</resources>

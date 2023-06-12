@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">App_Structure</string>
-    <string name="Bakery_Name"> Metabolic Sustenance </string>
-    <string name="Cakes_Page_heading">Cakes</string>
-        <string name="Pies_Page_Heading">Pies</string>
-</resources>
