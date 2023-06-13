@@ -23,7 +23,7 @@
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add New Question Below"
+            android:text="Edit Quiz Content"
             android:gravity="center"
             android:textSize="24dp"
             />
