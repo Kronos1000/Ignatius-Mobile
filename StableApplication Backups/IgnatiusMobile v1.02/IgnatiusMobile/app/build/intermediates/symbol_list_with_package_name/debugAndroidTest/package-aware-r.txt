@@ -1,0 +1,3 @@
+com.patrick.recycler.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

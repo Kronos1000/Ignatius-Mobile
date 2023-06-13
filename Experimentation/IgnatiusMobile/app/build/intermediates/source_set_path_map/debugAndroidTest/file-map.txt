@@ -1,0 +1,9 @@
+com.patrick.recycler.test.app-core-1.5.0-0 C:\Users\Patrick\.gradle\caches\transforms-3\ec8487f8c7272de764897bc7316bc789\transformed\core-1.5.0\res
+com.patrick.recycler.test.app-annotation-experimental-1.3.0-1 C:\Users\Patrick\.gradle\caches\transforms-3\fd3daf95af5e4e1fd3f3860fc1410040\transformed\annotation-experimental-1.3.0\res
+com.patrick.recycler.test.app-androidTest-2 D:\GitHub\Ignatius-Mobile\IgnatiusMobile\app\build\generated\res\resValues\androidTest\debug
+com.patrick.recycler.test.app-androidTest-3 D:\GitHub\Ignatius-Mobile\IgnatiusMobile\app\build\generated\res\rs\androidTest\debug
+com.patrick.recycler.test.app-mergeDebugAndroidTestResources-4 D:\GitHub\Ignatius-Mobile\IgnatiusMobile\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.patrick.recycler.test.app-mergeDebugAndroidTestResources-5 D:\GitHub\Ignatius-Mobile\IgnatiusMobile\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.patrick.recycler.test.app-merged_res-6 D:\GitHub\Ignatius-Mobile\IgnatiusMobile\app\build\intermediates\merged_res\debugAndroidTest
+com.patrick.recycler.test.app-androidTest-7 D:\GitHub\Ignatius-Mobile\IgnatiusMobile\app\src\androidTest\res
+com.patrick.recycler.test.app-androidTestDebug-8 D:\GitHub\Ignatius-Mobile\IgnatiusMobile\app\src\androidTestDebug\res
