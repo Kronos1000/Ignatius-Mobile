@@ -81,7 +81,7 @@ public class EditQuizMenu extends AppCompatActivity {
         builder.setMessage("How to Add new Question \n" +
                 "Fill in the form with all the required information.\n\n" +
                 "How To delete a Question \n" +
-                "To Delete a question from the quiz, simply write the question you wish to remove and press the delete button.No Need to" +
+                "To Delete a question from the quiz, simply type out the question you wish to remove and press the delete button. No Need to" +
                 "fill out the entire form.");
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
