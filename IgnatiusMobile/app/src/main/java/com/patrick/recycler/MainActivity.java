@@ -22,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
                     // Main Menu setup
                     public void onItemClick(AdapterView<?> adapterView, View view,
                                             int position, long id) {
+                        // Start Quiz menu
+                        if (position == 0) {
+                            Intent intent = new Intent(MainActivity.this,
+                                    Quizme.class);
+                            startActivity(intent);
+                        }
+
+
                         // Go to quiz menu option
                         if (position == 1) {
                             Intent intent = new Intent(MainActivity.this,

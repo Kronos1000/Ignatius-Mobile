@@ -91,7 +91,7 @@
             android:text="Answer: "
             android:textSize="24dp"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+           />
 
     </LinearLayout>
 

@@ -12,9 +12,11 @@
         android:theme="@style/Theme.Recycler"
         tools:targetApi="31">
         <activity
+            android:name=".Quizme"
+            android:exported="false" />
+        <activity
             android:name=".EditQuizMenu"
             android:exported="false" />
-
         <activity
             android:name=".Userlist"
             android:exported="false" />
@@ -29,7 +31,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 
