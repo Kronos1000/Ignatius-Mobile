@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
 public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
@@ -50,11 +48,30 @@ public class DBHelper extends SQLiteOpenHelper {
         int result = db.delete("Questions", "question=?", whereArgs);
         return result > 0;
     }
+   // get all data method
     public Cursor getdata()
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select * From Questions ",null );
         return  cursor;
     }
+    // get subject data method
+    public Cursor getTopics()
+    {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor= DB.rawQuery("Select DISTINCT subject from Questions",null);
+        return cursor;
+    }
+
+
+    // get data for quiz
+    public Cursor getQuizData(String selectedSubject) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM Questions WHERE subject = ?";
+        String[] selectionArgs = { selectedSubject };
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+        return cursor;
+    }
+
 
 }
