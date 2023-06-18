@@ -2,7 +2,7 @@ package com.patrick.recycler;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AlertDialog;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -32,6 +32,7 @@ public class QuizActivity extends AppCompatActivity {
     ArrayList<String> option3;
     ArrayList<String> answer;
     int currentQuestionIndex;
+    int rightAnswers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class QuizActivity extends AppCompatActivity {
         option3 = new ArrayList<>();
         answer = new ArrayList<>();
         currentQuestionIndex = 0;
+        rightAnswers = 0;
 
         loadQuizData(selectedSubject);
 
@@ -98,56 +100,41 @@ public class QuizActivity extends AppCompatActivity {
             button_option2.setText(option2.get(currentQuestionIndex));
             button_option3.setText(option3.get(currentQuestionIndex));
         } else {
-            // Quiz finished, display a message or perform necessary actions
             showResultDialog();
         }
     }
 
-
     private void checkAnswer(String selectedOption) {
-        int rightAnswers = 0;
-        int questionCount = 0;
         String correctAnswer = answer.get(currentQuestionIndex);
         if (selectedOption.equals(correctAnswer)) {
-            // Correct answer selected
             Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
             rightAnswers++;
-            questionCount++;
         } else {
-            // Incorrect answer selected
             Toast.makeText(this, "Incorrect!", Toast.LENGTH_SHORT).show();
         }
-
-        // Move to the next question
         currentQuestionIndex++;
         displayQuestion();
     }
 
-
     private void showResultDialog() {
-        int score = calculateScore();
+        int score = rightAnswers;
         String message = "Congratulations! You Scored " + score + "/" + question.size();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Quiz Results")
                 .setMessage(message)
-
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // Return to the main activity
                         Intent intent = new Intent(QuizActivity.this, MainActivity.class);
                         startActivity(intent);
-                       finish();
+                        finish();
                     }
                 })
                 .setCancelable(false)
                 .show();
 
-
         AlertDialog alertDialog = builder.create();
-
-// Customize the OK button color
         alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
             public void onShow(DialogInterface dialog) {
@@ -157,22 +144,5 @@ public class QuizActivity extends AppCompatActivity {
         });
 
         alertDialog.show();
-
-    }
-
-
-    private int calculateScore() {
-        int score = 0;
-        int quizProgress = 0;
-        for (int i = 0; i < question.size(); i++) {
-
-                String selectedOption = answer.get(i);
-                String correctAnswer = answer.get(i);
-                if (selectedOption.equals(correctAnswer)) {
-                    score++;
-            }
-
-        }
-        return score;
     }
 }
