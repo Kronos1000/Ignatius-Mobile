@@ -110,8 +110,31 @@ public class QuizActivity extends AppCompatActivity {
             Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
             rightAnswers++;
         } else {
-            Toast.makeText(this, "Incorrect!", Toast.LENGTH_SHORT).show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Learning opportunity (Incorrect Answer)");
+            builder.setMessage("Your Answer: " + selectedOption + "\nCorrect Answer: " + correctAnswer);
+
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    // Handle the "OK" button click if needed
+                }
+            });
+
+            builder.setCancelable(false);
+            AlertDialog alertDialog = builder.create();
+
+            alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                @Override
+                public void onShow(DialogInterface dialog) {
+                    Button positiveButton = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+                    positiveButton.setTextColor(Color.parseColor("#12bb08"));
+                }
+            });
+
+            alertDialog.show();
         }
+
         currentQuestionIndex++;
         displayQuestion();
     }
