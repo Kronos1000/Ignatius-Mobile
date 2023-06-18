@@ -43,7 +43,8 @@
             android:padding="8dp"
             android:text="Option 1"
             android:layout_marginTop="16dp"
-            android:onClick="onOptionButtonClicked" />
+            android:onClick="onOptionButtonClicked"
+            android:backgroundTint="#12bb08"/>
 
         <Button
             android:id="@+id/button_option2"
@@ -53,7 +54,8 @@
             android:padding="8dp"
             android:text="Option 2"
             android:layout_marginTop="8dp"
-            android:onClick="onOptionButtonClicked" />
+            android:onClick="onOptionButtonClicked"
+            android:backgroundTint="#12bb08"/>
 
         <Button
             android:id="@+id/button_option3"
@@ -63,7 +65,8 @@
             android:padding="8dp"
             android:text="Option 3"
             android:layout_marginTop="8dp"
-            android:onClick="onOptionButtonClicked" />
+            android:onClick="onOptionButtonClicked"
+            android:backgroundTint="#12bb08"/>
     </LinearLayout>
 
 
