@@ -22,28 +22,6 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-//        questionText = findViewById(R.id.question_Text);
-//
-//        DBHelper dbHelper = new DBHelper(this);
-//        database = dbHelper.getReadableDatabase();
-//
-//        Cursor cursor = database.rawQuery("SELECT id, question FROM questions", null);
-//
-//        while (cursor.moveToNext()) {
-//
-//            String question = cursor.getString(cursor.getColumnIndex("0"));
-//
-//            // Set the question text
-//            questionText.setText(question);
-//
-//            // Create radio buttons for each option
-//            RadioButton radioButton = new RadioButton(this);
-//            radioButton.setText("Option"); // Replace with the actual option text
-//            optionsGroup.addView(radioButton);
-//        }
-//
-//        cursor.close();
-//        database.close();
-//
+
     }
 }
