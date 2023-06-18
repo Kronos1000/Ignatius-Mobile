@@ -2,7 +2,8 @@ package com.patrick.recycler;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.appcompat.app.AlertDialog;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -96,9 +97,10 @@ public class QuizActivity extends AppCompatActivity {
             button_option3.setText(option3.get(currentQuestionIndex));
         } else {
             // Quiz finished, display a message or perform necessary actions
-
+            showResultDialog();
         }
     }
+
 
     private void checkAnswer(String selectedOption) {
         int rightAnswers = 0;
@@ -107,7 +109,7 @@ public class QuizActivity extends AppCompatActivity {
         if (selectedOption.equals(correctAnswer)) {
             // Correct answer selected
             Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
-            rightAnswers ++;
+            rightAnswers++;
             questionCount++;
         } else {
             // Incorrect answer selected
@@ -117,5 +119,33 @@ public class QuizActivity extends AppCompatActivity {
         // Move to the next question
         currentQuestionIndex++;
         displayQuestion();
+    }
+
+
+    private void showResultDialog() {
+        int score = calculateScore();
+        String message = "Congratulations You Scored " + score + "/" + question.size();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Quiz Results")
+                .setMessage(message)
+                .setPositiveButton("OK", null)
+                .setCancelable(false)
+                .show();
+    }
+
+    private int calculateScore() {
+        int score = 0;
+        int quizProgress = 0;
+        for (int i = 0; i < question.size(); i++) {
+
+                String selectedOption = answer.get(i);
+                String correctAnswer = answer.get(i);
+                if (selectedOption.equals(correctAnswer)) {
+                    score++;
+            }
+
+        }
+        return score;
     }
 }
