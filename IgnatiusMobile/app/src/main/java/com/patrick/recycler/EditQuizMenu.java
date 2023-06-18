@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -81,7 +82,7 @@ public class EditQuizMenu extends AppCompatActivity {
         builder.setMessage("How to Add new Question \n" +
                 "Fill in the form with all the required information.\n\n" +
                 "How To delete a Question \n" +
-                "To Delete a question from the quiz, simply type out the question you wish to remove and press the delete button. No Need to" +
+                "To Delete a question from the quiz, simply type out the question you wish to remove and press the delete button. there is No Need to " +
                 "fill out the entire form.");
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -90,8 +91,20 @@ public class EditQuizMenu extends AppCompatActivity {
                 // Handle the "OK" button click if needed
             }
         });
+
         builder.setCancelable(false); // Prevent dialog from being dismissed when pressing outside of it
         AlertDialog alertDialog = builder.create();
+
+// Customize the OK button color
+        alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialog) {
+                Button positiveButton = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+                positiveButton.setTextColor(Color.parseColor("#12bb08"));
+            }
+        });
+
         alertDialog.show();
+
     }
 }

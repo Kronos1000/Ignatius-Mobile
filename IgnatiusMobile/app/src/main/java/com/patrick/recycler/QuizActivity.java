@@ -4,8 +4,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -124,15 +126,40 @@ public class QuizActivity extends AppCompatActivity {
 
     private void showResultDialog() {
         int score = calculateScore();
-        String message = "Congratulations You Scored " + score + "/" + question.size();
+        String message = "Congratulations! You Scored " + score + "/" + question.size();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Quiz Results")
                 .setMessage(message)
-                .setPositiveButton("OK", null)
+
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Return to the main activity
+                        Intent intent = new Intent(QuizActivity.this, MainActivity.class);
+                        startActivity(intent);
+                       finish();
+                    }
+                })
                 .setCancelable(false)
                 .show();
+
+
+        AlertDialog alertDialog = builder.create();
+
+// Customize the OK button color
+        alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialog) {
+                Button positiveButton = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+                positiveButton.setTextColor(Color.parseColor("#12bb08"));
+            }
+        });
+
+        alertDialog.show();
+
     }
+
 
     private int calculateScore() {
         int score = 0;
