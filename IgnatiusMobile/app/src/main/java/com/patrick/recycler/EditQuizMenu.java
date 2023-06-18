@@ -47,7 +47,7 @@ public class EditQuizMenu extends AppCompatActivity {
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String questionTXT = question.getText().toString();
+                String questionTXT = question.getText().toString().toLowerCase(); // ensure  character are lower case as the question is currently PK
                 String subjectTXT = subject.getText().toString();
                 String option1TXT = option1.getText().toString();
                 String option2TXT = option2.getText().toString();
@@ -56,7 +56,19 @@ public class EditQuizMenu extends AppCompatActivity {
 
                 boolean checkinsertdata = DB.insertquizdata(questionTXT, subjectTXT, option1TXT, option2TXT, option3TXT, answerTXT);
                 if (checkinsertdata) {
+                    // inform user that a new questio has been added to the quiz bank
                     Toast.makeText(EditQuizMenu.this, "New Question Added", Toast.LENGTH_SHORT).show();
+
+                    //reset from after data submission
+                    question.setText("");
+                    subject.setText("");
+                    option1.setText("");
+                    option2.setText("");
+                    option3.setText("");
+                    answer.setText("");
+
+
+
                 } else {
                     Toast.makeText(EditQuizMenu.this, "No changes have been made", Toast.LENGTH_SHORT).show();
                 }
