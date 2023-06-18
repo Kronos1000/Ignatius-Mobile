@@ -50,6 +50,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:scaleType="centerCrop"
-        android:src="@drawable/glass" />
+        android:src="@drawable/magnifying_glass" />
 
 </LinearLayout>

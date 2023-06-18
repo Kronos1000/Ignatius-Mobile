@@ -12,13 +12,13 @@
         android:theme="@style/Theme.Recycler"
         tools:targetApi="31" >
         <activity
-            android:name=".QuizActivity"
+            android:name=".QuizActivity" android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".Quizme"
             android:exported="false" />
         <activity
-            android:name=".EditQuizMenu"
+            android:name=".EditQuizMenu" android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".Userlist"
@@ -27,7 +27,7 @@
             android:name=".Questionlist"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MainActivity" android:configChanges="orientation|screenSize"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
