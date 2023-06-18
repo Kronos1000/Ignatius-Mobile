@@ -48,11 +48,11 @@ public class EditQuizMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String questionTXT = question.getText().toString().toLowerCase(); // ensure  character are lower case as the question is currently PK
-                String subjectTXT = subject.getText().toString();
-                String option1TXT = option1.getText().toString();
-                String option2TXT = option2.getText().toString();
-                String option3TXT = option3.getText().toString();
-                String answerTXT = answer.getText().toString();
+                String subjectTXT = subject.getText().toString().toUpperCase(); // set subject to all caps
+                String option1TXT = option1.getText().toString().toLowerCase(); // set to lowercase to ensure the options match the correct answer
+                String option2TXT = option2.getText().toString().toLowerCase();
+                String option3TXT = option3.getText().toString().toLowerCase();
+                String answerTXT = answer.getText().toString().toLowerCase();
 
                 boolean checkinsertdata = DB.insertquizdata(questionTXT, subjectTXT, option1TXT, option2TXT, option3TXT, answerTXT);
                 if (checkinsertdata) {
