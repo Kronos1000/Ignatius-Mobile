@@ -18,14 +18,14 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Questions"
+        android:text="@string/questions"
         android:textSize="36dp"
         android:gravity="center"/>
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="The Following Questions are stored within the quiz bank"
+        android:text="@string/the_following_questions_are_stored_within_the_quiz_bank"
         android:textSize="24dp"
         android:gravity="center"/>
 

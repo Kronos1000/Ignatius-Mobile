@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Question here"
+            android:text=""
             android:textSize="24dp"
             android:textStyle="bold" />
 
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:padding="8dp"
-                android:text="Option 1"
+                android:text=""
                 android:layout_marginTop="16dp"
                 android:onClick="onOptionButtonClicked"
                 android:backgroundTint="#12bb08"/>
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:padding="8dp"
-                android:text="Option 2"
+                android:text=""
                 android:layout_marginTop="8dp"
                 android:onClick="onOptionButtonClicked"
                 android:backgroundTint="#12bb08"/>
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:padding="8dp"
-                android:text="Option 3"
+                android:text=""
                 android:layout_marginTop="8dp"
                 android:onClick="onOptionButtonClicked"
                 android:backgroundTint="#12bb08"/>

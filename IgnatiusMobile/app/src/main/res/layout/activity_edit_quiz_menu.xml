@@ -23,7 +23,7 @@
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Edit Quiz Content"
+            android:text="@string/edit_quiz_content"
             android:gravity="center"
             android:textSize="24dp"
             />
@@ -32,42 +32,42 @@
             android:id="@+id/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Question"
+            android:hint="@string/question"
             android:textSize="24dp"/>
 
         <EditText
             android:id="@+id/subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Subject"
+            android:hint="@string/subject"
             android:textSize="24dp"/>
 
         <EditText
             android:id="@+id/option1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Option1"
+            android:hint="@string/option1"
             android:textSize="24dp"/>
 
         <EditText
             android:id="@+id/option2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Option2"
+            android:hint="@string/option2"
             android:textSize="24dp"/>
 
         <EditText
             android:id="@+id/option3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Option3"
+            android:hint="@string/option3"
             android:textSize="24dp"/>
 
         <EditText
             android:id="@+id/answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Answer"
+            android:hint="@string/answer"
             android:textSize="24dp"/>
 
 
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Add Question"
+            android:text="@string/add_question"
             android:backgroundTint="#12bb08"
             />
 
@@ -87,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Show All Questions"
+            android:text="@string/show_all_questions"
             android:backgroundTint="#12bb08"/>
 
 
@@ -98,7 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Delete Question"
+            android:text="@string/delete_question"
             android:backgroundTint="#12bb08"/>
 
     </LinearLayout>

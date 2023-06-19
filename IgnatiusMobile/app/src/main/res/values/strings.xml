@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">Ignatius</string>
     <string name="add_new_quiz_question_title">Add New Quiz Question</string>
+    <string name="edit_quiz_content">Edit Quiz Content</string>
+    <string name="question">Question</string>
+    <string name="subject">Subject</string>
+    <string name="option1">Option1</string>
+    <string name="option2">Option2</string>
+    <string name="option3">Option3</string>
+    <string name="answer">Answer</string>
+    <string name="add_question">Add Question</string>
+    <string name="show_all_questions">Show All Questions</string>
+    <string name="delete_question">Delete Question</string>
+    <string name="questions">Questions</string>
+    <string name="the_following_questions_are_stored_within_the_quiz_bank">The Following Questions are stored within the quiz bank</string>
+    <string name="question_here">Question here</string>
 
     <string-array name="mainMenuItems">
         <item> Quiz Me</item>
