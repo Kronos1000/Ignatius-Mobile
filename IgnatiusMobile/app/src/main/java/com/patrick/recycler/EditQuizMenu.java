@@ -57,7 +57,7 @@ public class EditQuizMenu extends AppCompatActivity {
                 boolean checkinsertdata = DB.insertquizdata(questionTXT, subjectTXT, option1TXT, option2TXT, option3TXT, answerTXT);
                 if (checkinsertdata) {
                     // inform user that a new questio has been added to the quiz bank
-                    Toast.makeText(EditQuizMenu.this, "New Question Added", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditQuizMenu.this, R.string.succeed, Toast.LENGTH_SHORT).show();
 
                     //reset from after data submission
                     question.setText("");
@@ -70,7 +70,7 @@ public class EditQuizMenu extends AppCompatActivity {
 
 
                 } else {
-                    Toast.makeText(EditQuizMenu.this, "No changes have been made", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditQuizMenu.this, R.string.add_fail, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -81,21 +81,17 @@ public class EditQuizMenu extends AppCompatActivity {
                 String questionTXT = question.getText().toString();
                 boolean checkDeleteData = DB.deleteQuizData(questionTXT);
                 if (checkDeleteData) {
-                    Toast.makeText(EditQuizMenu.this, "Question Deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditQuizMenu.this, R.string.del_question_message_success, Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(EditQuizMenu.this, "Whoops That Question Does not exist", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditQuizMenu.this, R.string.fail, Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
         // Show an alert dialog when the activity is created
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Instructions");
-        builder.setMessage("How to Add new Question \n" +
-                "Fill in the form with all the required information.\n\n" +
-                "How To delete a Question \n" +
-                "To Delete a question from the quiz, simply type out the question you wish to remove and press the delete button. there is No Need to " +
-                "fill out the entire form.");
+        builder.setTitle(R.string.instruction_alert_heading);
+        builder.setMessage(R.string.Instruction_Text);
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
