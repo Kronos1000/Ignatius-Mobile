@@ -14,6 +14,7 @@
     <string name="questions">Questions</string>
     <string name="the_following_questions_are_stored_within_the_quiz_bank">The Following Questions are stored within the quiz bank</string>
     <string name="question_here">Question here</string>
+    <string name="what_would_you_like_to_be_quizzed_on">What would you like to be quizzed on</string>
 
     <string-array name="mainMenuItems">
         <item> Quiz Me</item>
