@@ -1,0 +1,9 @@
+Update Activty layout files to not use hardcoded trings to allow for mulit language support 
+Change what happens when you try to delete  question no in the database (change from toast messag to alert box) 
+Optimie appliation for use on different device sizes.
+
+write C# program to accompany program tht will ake manual sql injection more convenient (possible if time permits) 
+
+Complete relevant project documentation it
+
+Insert questions for both upoming examinations (IT617,IT709) so the application can be put to use 
