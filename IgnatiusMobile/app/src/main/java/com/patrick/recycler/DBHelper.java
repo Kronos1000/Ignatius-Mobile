@@ -14,6 +14,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
+
         DB.execSQL("create Table Questions (question TEXT primary key, subject TEXT,option1 TEXT,option2 TEXT,option3 TEXT,answer TEXT)");
     }
 

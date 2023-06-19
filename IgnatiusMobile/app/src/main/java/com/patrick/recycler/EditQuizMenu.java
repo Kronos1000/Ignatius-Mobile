@@ -56,7 +56,7 @@ public class EditQuizMenu extends AppCompatActivity {
 
                 boolean checkinsertdata = DB.insertquizdata(questionTXT, subjectTXT, option1TXT, option2TXT, option3TXT, answerTXT);
                 if (checkinsertdata) {
-                    // inform user that a new questio has been added to the quiz bank
+                    // inform user that a new question has been added to the quiz bank
                     Toast.makeText(EditQuizMenu.this, R.string.succeed, Toast.LENGTH_SHORT).show();
 
                     //reset from after data submission
@@ -96,7 +96,6 @@ public class EditQuizMenu extends AppCompatActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                // Handle the "OK" button click if needed
             }
         });
 

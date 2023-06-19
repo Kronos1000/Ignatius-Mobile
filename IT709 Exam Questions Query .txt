@@ -32,7 +32,7 @@ VALUES ('What is server-side scripting?',
              'IT709',
              'Not-Found This is caused when the server cannot find the requested resource',
              'Ok the request was successfull',
-             'Unauthorized -- not completed due to missing the required credentials ',
+             'Unauthorized -- not completed due to missing the required credentials',
              'Unauthorized -- not completed due to missing the required credentials'),
 			 
 			 
@@ -40,16 +40,16 @@ VALUES ('What is server-side scripting?',
              'IT709',
              'Internal server',
              'Forbidden - The server understands the request, but refuses to authorize it',
-             'Unauthorized -- not completed due to missing the required credentials ',
+             'Unauthorized -- not completed due to missing the required credentials',
              'Forbidden - The server understands the request, but refuses to authorize it'),
 			 
 			 
 			 
 			 	 	 			   ('What does a status code of 200 represent?',
              'IT709',
-             'OK - request was successfull ',
+             'OK - request was successfull',
              'Content not found ',
-             'Unauthorized -- not completed due to missing the required credentials ',
+             'Unauthorized -- not completed due to missing the required credentials',
              'OK - The request was successful'),
 			 
 			 	 	 	 			   ('What is the purpose of an HTTP PUT request?',
@@ -57,7 +57,7 @@ VALUES ('What is server-side scripting?',
              'DELETE data via an api',
              'UPDATE data vis an api',
              'ADD data via an api',
-             ' 'UPDATE data vis an api'),
+             'UPDATE data vis an api'),
 			 
 			 
 			 	 	 	 			   ('What is the purpose of an HTTP POST request?',
@@ -118,7 +118,243 @@ VALUES ('What is server-side scripting?',
 			 '//',
 			 'Authorzation',
 			 'Token',
-			 'Authorzation');
+			 'Authorzation'),
+			 
+			 
+			 
+			 		
+			  ('What is the purpose of state in React?',
+			 'IT709',
+			 'to handle  user interactions and events in a React component.',
+			 'To store and manage data for a component.',
+			 ' to establish communication between different React components.',
+			 'To store and manage data for a component.'),
+
+			   ('
+			 What is the name of the package that should be installed to provide additional routing functionality in React?',
+			 'IT709',
+			 'react-router-dom.',
+			 'React Navigation.',
+			 'React Route Manager',
+			 'react-router-dom.'),
+
+	 ('What is the name of the package that should be installed to provide additional routing functionality in React?',
+			 'IT709',
+			 'react-router-dom.',
+			 'React Navigation.',
+			 'React Route Manager',
+			 'react-router-dom.'),
+
+	('What is JSX?',
+			 'IT709',
+			 'A compnent of CSS framework',
+			 'A syntax extension to JavaScript that allows you to describe what the UI should look like.',
+			 'React Route Manager',
+			 'A syntax extension to JavaScript that allows you to describe what the UI should look like.'),
+
+
+	('What are hooks in React?',
+			 'IT709',
+			 'Functions that allow you to use React features like state, and utilise lifecycle methods without needing to define a class for a component.',
+			 'Built-in methods in React for handling asynchronous operations.',
+			 'Special components used for managing global state in React applications.',
+			 'Functions that allow you to use React features like state, and utilise lifecycle methods without needing to define a class for a component.'),
+
+	('How do you change the request method when using fetch()?',
+			 'IT709',
+			 'By specififying the method property in the fetch configuration',
+			 'By using the setMethod() function provided by the fetch API',
+			 'By specififying the method property in the fetch configuration',
+			 'By specififying the method property in the fetch configuration'),
+			 
+			 
+			 
+			 
+	('How can you send data in the body of a request using fetch?',
+			 'IT709',
+			 '//',
+			 'By making an htp request',
+			 'By specifying the body property in the fetch options as a JSON string',
+			 'By specifying the body property in the fetch options as a JSON string'),
+			 
+			 	('What is the purpose of the Authorization header in a fetch request?',
+			 'IT709',
+			 'To provide credentials with each request that are used to authenticate and authorize a user',
+			 'By making an htp request',
+			 'By specifying the body property in the fetch options as a JSON string',
+			 'To provide credentials with each request that are used to authenticate and authorize a user'),
+			 
+			 	('How can you send data in the body of a request using fetch?',
+			 'IT709',
+			 '//',
+			 'By making an htp request',
+			 'By specifying the body property in the fetch options as a JSON string',
+			 'By specifying the body property in the fetch options as a JSON string'),
+			 
+			 	(' useState triggers a re-render on change',
+			 'IT709',
+			 'False',
+			 '//',
+			 'True',
+			 'True'),
+			 
+			 			 	(' useRef triggers a re-render on change',
+			 'IT709',
+			 '//',
+			 'False',
+			 'True',
+			 'False'),
+			 
+			 
+			 			 	('What is the main benefit of the Virtual DOM?',
+			 'IT709',
+			 'The virtual DOM is able to perform DOM updates quicker and more efficiently than the real DOM',
+			 'There is no benefit of using on over the other ',
+			 'The Real Functions Equally as well as a virtual DOM ',
+			 'The virtual DOM is able to perform DOM updates quicker and more efficiently than the real DOM'),
+			 
+			 
+			  	('The Purpose of the FETCH function in Javascript is to make HTTP requests',
+			 'IT709',
+			 'False',
+			 'True',
+			 '//',
+			 'True'),
+			 
+			 	 
+			 
+			  	('What is the purpose of the useEffect hook in a React application?',
+			 'IT709',
+			 'To synchronise your React application with an external system.',
+			 'To return a function that lets you navigate programmatically within your application.',
+			 'To get access to information about the current location.',
+			 'To synchronise your React application with an external system.'),
+			 
+			 
+			  
+			  	('What is the purpose of the useLocation hook?',
+			 'IT709',
+			 'To synchronise your React application with an external system.',
+			 'To return a function that lets you navigate programmatically within your application.',
+			 'To get access to information about the current location.',
+			 'To get access to information about the current location.'),
+			 
+			 
+			 
+			 	('What is the purpose of the useNavigate hook in React Router?',
+			 'IT709',
+			 'To synchronise your React application with an external system.',
+			 'To return a function that lets you navigate programmatically within your application.',
+			 'To get access to information about the current location.',
+			 'To return a function that lets you navigate programmatically within your application.'),
+			 
+			 
+			 			 
+
+			 
+			 
+			 
+			 	 	 	('What is the purpose of the useParams hook in React router?',
+			 'IT709',
+			 'To get access to information about the current location.',
+			 'To provide a reference to a value that isnt needed for rendering.',
+			 'To get access to query parameters that were passed when routing to the element',
+			 'To get access to query parameters that were passed when routing to the element'),
+			 
+			 
+			 
+			 			 	 	 	('What is the purpose of the useState hook?',
+			 'IT709',
+			 'To provide a reference to a value that isnt needed for rendering.',
+			 'To manage state in a React application by adding a state variable',
+			 'To get access to query parameters that were passed when routing to the element',
+			 'To manage state in a React application by adding a state variable'),
+			 
+			 
+			 			 	 	 	('What is the purpose of the useRef hook?',
+			 'IT709',
+			 'To provide a reference to a value that isnt needed for rendering.',
+			 'To manage state in a React application by adding a state variable',
+			 'To get access to query parameters that were passed when routing to the element',
+			 'To provide a reference to a value that isnt needed for rendering.'),
+			 
+			 
+			 	(' The Purpose of the useRef hook is To provide a reference to a value that isnt needed for rendering. ',
+			 'IT709',
+			 'True',
+			 'False',
+			 '//',
+			 'True'),
+			 
+			 
+			 	 	('When creating a list of JSX objects using `array.map()`, what prop is required for each rendered element?',
+			 'IT709',
+			 'The Map Prop',
+			 'The key prop',
+			 'The array prop',
+			 'The key prop');
+			 
+			 
+			 		 	 	('When creating a list of JSX objects using `array.map()`, what prop is required for each rendered element?',
+			 'IT709',
+			 'The Map Prop',
+			 'The key prop',
+			 'The array prop',
+			 'The key prop');
+			 
+			 
+			 			 		 	 	('When creating a list of JSX objects using `array.map()`, The KEY Prop is required for each rendered element?',
+			 'IT709',
+			 'True',
+			 'False',
+			 '//',
+			 'True'),
+			 
+			 
+			 
+			 
+			 		 			 		 	 	('Why is the key prop required when rendering a list of JSX elements?',
+			 'IT709',
+			 '//',
+			 'It enables creation of multiple "pages" in a single page application that allow navigation without causing a page refresh by using client-side routing.',
+			 'It helps React match up each list item with its corresponding component, which is important if your list can be re-ordered, or have items inserted or deleted.',
+			 'It helps React match up each list item with its corresponding component, which is important if your list can be re-ordered, or have items inserted or deleted.');
+			 ,
+			 
+			 
+			 
+			 		 			 		 	 	('What hook do you use for programmatic navigation in React Router?',
+			 'IT709',
+			 'useState',
+			 'useNavigate',
+			 'useParams',
+			 'useNavigate'),
+			 
+			 
+			 
+			 	 
+			 		 			 		 	 	('What hook do you use to manage state in a React functional component?',
+			 'IT709',
+			 'useState',
+			 'useRef',
+			 'useParams',
+			 'useState');
+			 
+			 
+			 
+			 
+			 
+			 
+
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+		
 			 
 			 
 			 
@@ -128,7 +364,23 @@ VALUES ('What is server-side scripting?',
 			 
 			 
 			 
+	
 			 
 			 
 			 
+			 
+			 
+			 
+			 
+			 
+			 
+	
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+		
 
