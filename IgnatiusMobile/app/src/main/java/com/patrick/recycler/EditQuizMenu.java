@@ -47,12 +47,12 @@ public class EditQuizMenu extends AppCompatActivity {
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String questionTXT = question.getText().toString().toLowerCase(); // ensure  character are lower case as the question is currently PK
+                String questionTXT = question.getText().toString().toLowerCase().trim(); // ensure  characters are lower case as the question is currently PK
                 String subjectTXT = subject.getText().toString().toUpperCase(); // set subject to all caps
-                String option1TXT = option1.getText().toString().toLowerCase(); // set to lowercase to ensure the options match the correct answer
-                String option2TXT = option2.getText().toString().toLowerCase();
-                String option3TXT = option3.getText().toString().toLowerCase();
-                String answerTXT = answer.getText().toString().toLowerCase();
+                String option1TXT = option1.getText().toString().trim();
+                String option2TXT = option2.getText().toString().trim();
+                String option3TXT = option3.getText().toString().trim();
+                String answerTXT = answer.getText().toString().trim();
 
                 boolean checkinsertdata = DB.insertquizdata(questionTXT, subjectTXT, option1TXT, option2TXT, option3TXT, answerTXT);
                 if (checkinsertdata) {
