@@ -17,13 +17,14 @@
     <string name="what_would_you_like_to_be_quizzed_on">Worüber möchten Sie befragt werden?</string>
     <string name="Instruction_Text">Neue Frage hinzufügen: Füllen Sie das Formular mit allen erforderlichen Informationen aus.\n\nFrage löschen: Geben Sie einfach die Frage ein, die Sie entfernen möchten, und klicken Sie auf die Schaltfläche Löschen“.</string>
     <string name="instruction_alert_heading">Anweisungen</string>
-
+    <string name="ok_button">Akzeptieren</string>
     <string name="del_question_message_success">Frage gelöscht</string>
     <string name="fail">Hoppla, diese Frage existiert nicht</string>
     <string name="succeed">Neue Frage hinzugefügt</string>
     <string name="add_fail">Frage bereits vorhanden</string>
     <string name="correct_answer_snackbar">Richtig</string>
     <string name="c">Correct!</string>
+    <string name="wrong_answer_alert">Lernmöglichkeit (falsche Antwort)</string>
     <string-array name="mainMenuItems">
         <item> Quiz mich</item>
         <item>Quizfragen</item>

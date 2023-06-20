@@ -115,10 +115,10 @@ public class QuizActivity extends AppCompatActivity {
             rightAnswers++;
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Learning opportunity (Incorrect Answer)");
-            builder.setMessage("Your Answer: " + selectedOption + "\nCorrect Answer: " + correctAnswer);
+            builder.setTitle(R.string.wrong_answer_alert);
+            builder.setMessage("Your Answer:\n" + selectedOption + "\n\n\nCorrect Answer:\n" + correctAnswer);
 
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     // Handle the "OK" button click if needed
@@ -149,8 +149,8 @@ public class QuizActivity extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Quiz Results")
-                .setMessage(message)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setMessage(message);
+        builder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(QuizActivity.this, MainActivity.class);

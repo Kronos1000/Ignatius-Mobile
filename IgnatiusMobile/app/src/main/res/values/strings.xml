@@ -23,6 +23,8 @@
     <string name="add_fail">Question Already exists </string>
     <string name="correct_answer_snackbar">Correct!</string>
     <string name="c">Correct!</string>
+    <string name="ok_button">OK</string>
+    <string name="wrong_answer_alert">Learning opportunity (Incorrect Answer)</string>
 
     <string-array name="mainMenuItems">
         <item> Quiz Me</item>

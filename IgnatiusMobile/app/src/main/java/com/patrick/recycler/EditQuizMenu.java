@@ -104,7 +104,7 @@ public class EditQuizMenu extends AppCompatActivity {
         builder.setTitle(R.string.instruction_alert_heading);
         builder.setMessage(R.string.Instruction_Text);
 
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
             }
