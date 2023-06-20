@@ -101,8 +101,7 @@ VALUES
   'To store and manage data for a component.'
 ), 
 (
-  '
-       What is the name of the package that should be installed to provide additional routing functionality in React?', 
+  'What is the name of the package that should be installed to provide additional routing functionality in React?', 
   'IT709', 'react-router-dom.', 'React Navigation.', 
   'React Route Manager', 'react-router-dom.'
 ), 
@@ -142,6 +141,10 @@ VALUES
   'By making an htp request', 'By specifying the body property in the fetch options as a JSON string', 
   'To provide credentials with each request that are used to authenticate and authorize a user'
 ), 
+
+
+
+
 (
   'How can you send data in the body of a request using fetch?', 
   'IT709', '//', 'By making an htp request', 
@@ -188,6 +191,9 @@ VALUES
   'To get access to information about the current location.', 
   'To return a function that lets you navigate programmatically within your application.'
 ), 
+
+
+
 (
   'What is the purpose of the useParams hook in React router?', 
   'IT709', 'To get access to information about the current location.', 
@@ -202,6 +208,10 @@ VALUES
   'To get access to query parameters that were passed when routing to the element', 
   'To manage state in a React application by adding a state variable'
 ), 
+
+
+
+
 (
   'What is the purpose of the useRef hook?', 
   'IT709', 'To provide a reference to a value that isnt needed for rendering.', 
@@ -209,26 +219,39 @@ VALUES
   'To get access to query parameters that were passed when routing to the element', 
   'To provide a reference to a value that isnt needed for rendering.'
 ), 
+
 (
   ' The Purpose of the useRef hook is To provide a reference to a value that isnt needed for rendering. ', 
   'IT709', 'True', 'False', '//', 'True'
 ), 
+
+
+
+
+
+
+
 (
   'When creating a list of JSX objects using `array.map()`, what prop is required for each rendered element?', 
   'IT709', 'The Map Prop', 'The key prop', 
   'The array prop', 'The key prop'
-);
+)
+
 (
   'When creating a list of JSX objects using `array.map()`, The KEY Prop is required for each rendered element?', 
   'IT709', 'True', 'False', '//', 'True'
 ), 
 (
   'Why is the key prop required when rendering a list of JSX elements?', 
-  'IT709', '//', 'It enables creation of multiple "pages" in a single page application that allow navigation without causing a page refresh by using client-side routing.', 
+  'IT709', '//', 'It enables creation of multiple Pages in a single page application that allow navigation without causing a page refresh by using client-side routing.', 
   'It helps React match up each list item with its corresponding component, which is important if your list can be re-ordered, or have items inserted or deleted.', 
   'It helps React match up each list item with its corresponding component, which is important if your list can be re-ordered, or have items inserted or deleted.'
 );
-, 
+
+
+
+
+
 (
   'What hook do you use for programmatic navigation in React Router?', 
   'IT709', 'useState', 'useNavigate', 
