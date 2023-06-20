@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 
 public class QuizActivity extends AppCompatActivity {
@@ -107,7 +108,8 @@ public class QuizActivity extends AppCompatActivity {
     private void checkAnswer(String selectedOption) {
         String correctAnswer = answer.get(currentQuestionIndex);
         if (selectedOption.equals(correctAnswer)) {
-            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
+
+           Toast.makeText(this, getString(R.string.correct_answer_snackbar), Toast.LENGTH_SHORT).show();
             rightAnswers++;
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
