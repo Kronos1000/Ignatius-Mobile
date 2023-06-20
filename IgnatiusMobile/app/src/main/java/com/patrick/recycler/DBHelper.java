@@ -16,11 +16,13 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase DB) {
 
         DB.execSQL("create Table Questions (question TEXT primary key, subject TEXT,option1 TEXT,option2 TEXT,option3 TEXT,answer TEXT)");
+        DB.execSQL("select * from questions");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int oldVersion, int newVersion) {
-        DB.execSQL("drop Table if exists Questions");
+        // open DB by making query (on upgrade will run if onCreate does not)
+        DB.execSQL("select * from questions");
 
     }
 
