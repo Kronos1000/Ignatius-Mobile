@@ -111,7 +111,7 @@ public class QuizActivity extends AppCompatActivity {
         if (selectedOption.equals(correctAnswer)) {
             View rootView =  findViewById(android.R.id.content);
             Snackbar.make(rootView, R.string.correct_answer_snackbar, Snackbar.LENGTH_SHORT).show();
-          // Toast.makeText(this, getString(R.string.correct_answer_snackbar), Toast.LENGTH_SHORT).show();
+
             rightAnswers++;
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);

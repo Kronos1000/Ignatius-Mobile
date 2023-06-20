@@ -21,7 +21,7 @@
     <string name="del_question_message_success">Frage gelöscht</string>
     <string name="fail">Hoppla, diese Frage existiert nicht</string>
     <string name="succeed">Neue Frage hinzugefügt</string>
-    <string name="add_fail">Es wurden keine Änderungen vorgenommen</string>
+    <string name="add_fail">Frage bereits vorhanden</string>
     <string name="correct_answer_snackbar">Richtig</string>
     <string name="c">Correct!</string>
     <string-array name="mainMenuItems">

@@ -20,7 +20,7 @@
     <string name="del_question_message_success">Question Deleted</string>
     <string name="fail">Whoops That Question Does not exist</string>
     <string name="succeed">New Question Added</string>
-    <string name="add_fail">No changes have been made</string>
+    <string name="add_fail">Question Already exists </string>
     <string name="correct_answer_snackbar">Correct!</string>
     <string name="c">Correct!</string>
 

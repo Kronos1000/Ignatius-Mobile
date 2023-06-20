@@ -9,8 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+
+import com.google.android.material.snackbar.Snackbar;
 import com.patrick.recycler.DBHelper;
 
 public class EditQuizMenu extends AppCompatActivity {
@@ -57,8 +58,9 @@ public class EditQuizMenu extends AppCompatActivity {
                 boolean checkinsertdata = DB.insertquizdata(questionTXT, subjectTXT, option1TXT, option2TXT, option3TXT, answerTXT);
                 if (checkinsertdata) {
                     // inform user that a new question has been added to the quiz bank
-                    Toast.makeText(EditQuizMenu.this, R.string.succeed, Toast.LENGTH_SHORT).show();
 
+                    View rootView =  findViewById(android.R.id.content);
+                    Snackbar.make(rootView, R.string.succeed, Snackbar.LENGTH_SHORT).show();
                     //reset from after data submission
                     question.setText("");
                     subject.setText("");
@@ -70,7 +72,9 @@ public class EditQuizMenu extends AppCompatActivity {
 
 
                 } else {
-                    Toast.makeText(EditQuizMenu.this, R.string.add_fail, Toast.LENGTH_SHORT).show();
+                    View rootView =  findViewById(android.R.id.content);
+                    Snackbar.make(rootView, R.string.add_fail, Snackbar.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -80,10 +84,17 @@ public class EditQuizMenu extends AppCompatActivity {
             public void onClick(View v) {
                 String questionTXT = question.getText().toString();
                 boolean checkDeleteData = DB.deleteQuizData(questionTXT);
+                View rootView =  findViewById(android.R.id.content);
+
                 if (checkDeleteData) {
-                    Toast.makeText(EditQuizMenu.this, R.string.del_question_message_success, Toast.LENGTH_SHORT).show();
+
+
+                    Snackbar.make(rootView, R.string.del_question_message_success, Snackbar.LENGTH_SHORT).show();
+
+
                 } else {
-                    Toast.makeText(EditQuizMenu.this, R.string.fail, Toast.LENGTH_SHORT).show();
+
+                    Snackbar.make(rootView, R.string.fail, Snackbar.LENGTH_SHORT).show();
                 }
             }
         });
