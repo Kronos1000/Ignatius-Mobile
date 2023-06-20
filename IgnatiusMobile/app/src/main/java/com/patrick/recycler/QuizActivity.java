@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 
@@ -39,6 +39,7 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
         DB = new DBHelper(this);
 
         // Retrieve quiz data from intent extras
@@ -108,8 +109,9 @@ public class QuizActivity extends AppCompatActivity {
     private void checkAnswer(String selectedOption) {
         String correctAnswer = answer.get(currentQuestionIndex);
         if (selectedOption.equals(correctAnswer)) {
-
-           Toast.makeText(this, getString(R.string.correct_answer_snackbar), Toast.LENGTH_SHORT).show();
+            View rootView =  findViewById(android.R.id.content);
+            Snackbar.make(rootView, R.string.correct_answer_snackbar, Snackbar.LENGTH_SHORT).show();
+          // Toast.makeText(this, getString(R.string.correct_answer_snackbar), Toast.LENGTH_SHORT).show();
             rightAnswers++;
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
