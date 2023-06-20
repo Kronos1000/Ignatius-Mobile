@@ -11,24 +11,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Recycler"
         tools:targetApi="31" >
+
         <activity
-            android:name=".QuizActivity" android:configChanges="orientation|screenSize"
-            android:exported="false" />
+            android:name=".QuizActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Quizme"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <activity
-            android:name=".EditQuizMenu" android:configChanges="orientation|screenSize"
-            android:exported="false" />
+            android:name=".EditQuizMenu"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Userlist"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Questionlist"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <activity
-            android:name=".MainActivity" android:configChanges="orientation|screenSize"
-            android:exported="true" >
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
