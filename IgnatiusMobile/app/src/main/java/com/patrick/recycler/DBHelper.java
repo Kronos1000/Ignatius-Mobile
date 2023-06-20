@@ -21,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase DB, int oldVersion, int newVersion) {
         DB.execSQL("drop Table if exists Questions");
-      
+
     }
 
 
