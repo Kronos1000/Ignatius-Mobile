@@ -24,8 +24,7 @@
 
         <activity
             android:name=".EditQuizMenu"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+            android:exported="false" />
 
 
 
