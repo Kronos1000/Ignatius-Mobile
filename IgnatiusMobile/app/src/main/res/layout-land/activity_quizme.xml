@@ -14,7 +14,7 @@
     <FrameLayout
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:paddingTop="20px">
 
 
@@ -28,26 +28,21 @@
             android:src="@drawable/ignatius_banner" />
 
     </FrameLayout>
-
-
-
-    <ListView
-
-        android:id="@+id/list_options"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:entries="@array/mainMenuItems" />
+        android:text="@string/what_would_you_like_to_be_quizzed_on"
+        android:textSize="24dp"
+        android:gravity="center"/>
 
-
-
-
-
-    <ImageView
+    <ListView
+        android:id="@+id/topic_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="right"
-        android:scaleType="centerCrop"
-        android:src="@drawable/glass" />
+        android:layout_height="match_parent" />
+
+
+
+
 
 </LinearLayout>

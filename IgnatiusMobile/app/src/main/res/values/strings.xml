@@ -15,7 +15,7 @@
     <string name="the_following_questions_are_stored_within_the_quiz_bank">The Following Questions are stored within the quiz bank</string>
     <string name="question_here">Question here</string>
     <string name="what_would_you_like_to_be_quizzed_on">What would you like to be quizzed on</string>
-    <string name="Instruction_Text">Add new Question: Fill in the form with all the required information.\n\nDelete Question: simply type out the question you wish to remove and press the delete button.</string>
+    <string name="Instruction_Text">Add new Question: Fill in the form with all the required information.\n\nDelete Question: Simply type out the question you wish to remove and press the delete button.</string>
     <string name="instruction_alert_heading">Instructions</string>
     <string name="del_question_message_success">Question Deleted</string>
     <string name="fail">Whoops That Question Does not exist</string>

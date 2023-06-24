@@ -12,42 +12,36 @@
 
 
     <FrameLayout
-
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:paddingTop="20px">
-
-
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-
-
             android:src="@drawable/ignatius_banner" />
 
     </FrameLayout>
 
 
 
-    <ListView
 
-        android:id="@+id/list_options"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:entries="@array/mainMenuItems" />
+        <ListView
 
-
-
+            android:id="@+id/list_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:entries="@array/mainMenuItems" />
 
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:scaleType="centerCrop"
-        android:src="@drawable/glass" />
+
+        android:src="@drawable/glass_large" />
+
 
 </LinearLayout>

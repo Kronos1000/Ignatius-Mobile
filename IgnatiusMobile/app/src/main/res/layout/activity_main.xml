@@ -12,19 +12,14 @@
 
 
     <FrameLayout
-
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:paddingTop="20px">
-
-
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-
-
             android:src="@drawable/ignatius_banner" />
 
     </FrameLayout>

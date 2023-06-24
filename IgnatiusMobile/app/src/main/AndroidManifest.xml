@@ -15,28 +15,32 @@
         <activity
             android:name=".QuizActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:configChanges="orientation|screenSize"
+     />
 
         <activity
             android:name=".Quizme"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:configChanges="orientation|screenSize"
+      />
 
         <activity
             android:name=".EditQuizMenu"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="orientation|screenSize"/>
 
 
 
         <activity
             android:name=".Questionlist"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:configChanges="orientation|screenSize" />
 
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:configChanges="orientation|screenSize"
+         >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
