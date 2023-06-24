@@ -36,12 +36,7 @@
             android:entries="@array/mainMenuItems" />
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
 
-        android:src="@drawable/glass_large" />
 
 
 </LinearLayout>
