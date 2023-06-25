@@ -16,8 +16,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase DB) {
 
         DB.execSQL("create Table Questions (question TEXT primary key, subject TEXT,option1 TEXT,option2 TEXT,option3 TEXT,answer TEXT)");
-        DB.execSQL("select * from questions");
-        DB.execSQL("select * from questions");
+
     }
 
     @Override
@@ -31,7 +30,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
        DB = getWritableDatabase();
     }
-// close DB when app is closed 
+// close DB when app is closed
     public void closeDatabase(SQLiteDatabase DB) {
         if (DB != null && DB.isOpen()) {
             DB.close();
