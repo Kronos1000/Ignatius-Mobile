@@ -24,10 +24,19 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase DB, int oldVersion, int newVersion) {
         // open DB by making query (on upgrade will run if onCreate does not)
         DB.execSQL("select * from questions");
-        DB.execSQL("select * from questions");
-        DB.execSQL("select * from questions");
+
     }
 
+    public void openDatabase(SQLiteDatabase DB) {
+
+       DB = getWritableDatabase();
+    }
+// close DB when app is closed 
+    public void closeDatabase(SQLiteDatabase DB) {
+        if (DB != null && DB.isOpen()) {
+            DB.close();
+        }
+    }
 
     public Boolean insertquizdata(String question, String subject, String option1, String option2, String option3, String answer) {
 
