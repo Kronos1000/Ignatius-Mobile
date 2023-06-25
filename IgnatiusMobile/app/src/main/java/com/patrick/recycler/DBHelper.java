@@ -22,6 +22,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase DB, int oldVersion, int newVersion) {
         // open DB by making query (on upgrade will run if onCreate does not)
+        DB = getWritableDatabase();
         DB.execSQL("select * from questions");
 
     }
