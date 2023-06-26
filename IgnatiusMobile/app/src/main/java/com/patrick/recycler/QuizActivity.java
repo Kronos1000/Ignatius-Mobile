@@ -29,6 +29,7 @@ public class QuizActivity extends AppCompatActivity {
 
     ArrayList<String> question;
     ArrayList<String> option1;
+    TextView questionCounterText;
     ArrayList<String> option2;
     ArrayList<String> option3;
     ArrayList<String> answer;
@@ -46,10 +47,11 @@ public class QuizActivity extends AppCompatActivity {
         String selectedSubject = getIntent().getStringExtra("selectedSubject");
 
         questionText = findViewById(R.id.QuestionText);
+        questionCounterText = findViewById(R.id.questionCounterText);
         button_option1 = findViewById(R.id.button_option1);
         button_option2 = findViewById(R.id.button_option2);
         button_option3 = findViewById(R.id.button_option3);
-
+        TextView questionCounterText;
         question = new ArrayList<>();
         option1 = new ArrayList<>();
         option2 = new ArrayList<>();
@@ -101,6 +103,9 @@ public class QuizActivity extends AppCompatActivity {
             button_option1.setText(option1.get(currentQuestionIndex));
             button_option2.setText(option2.get(currentQuestionIndex));
             button_option3.setText(option3.get(currentQuestionIndex));
+
+            String counterText = "Question " + (currentQuestionIndex + 1) + " of " + question.size();
+            questionCounterText.setText(counterText);
         } else {
             showResultDialog();
         }
