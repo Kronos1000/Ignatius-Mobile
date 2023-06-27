@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Ignatius</string>
+    <string name="add_new_quiz_question_title">Neue Quizfrage hinzufügen</string>
+    <string name="edit_quiz_content">Bearbeiten Sie den Quizinhalt</string>
+    <string name="question">Frage</string>
+    <string name="subject">Thema</string>
+    <string name="option1">Möglichkeit eins</string>
+    <string name="option2">Möglichkeit zwei</string>
+    <string name="option3">Möglichkeit drei</string>
+    <string name="answer">Antworten</string>
+    <string name="add_question">Frage hinzufügen</string>
+    <string name="show_all_questions">Zeige alle Fragen</string>
+    <string name="delete_question">Frage löschen</string>
+    <string name="questions">Fragen</string>
+    <string name="the_following_questions_are_stored_within_the_quiz_bank">Die folgenden Fragen werden in der Quizbank gespeichert</string>
+    <string name="question_here">Frage hier</string>
+    <string name="what_would_you_like_to_be_quizzed_on">Worüber möchten Sie befragt werden?</string>
+    <string name="Instruction_Text">Neue Frage hinzufügen: Füllen Sie das Formular mit allen erforderlichen Informationen aus.\n\nFrage löschen: Geben Sie einfach die Frage ein, die Sie entfernen möchten, und klicken Sie auf die Schaltfläche Löschen“.</string>
+    <string name="instruction_alert_heading">Anweisungen</string>
+    <string name="ok_button">Akzeptieren</string>
+    <string name="del_question_message_success">Frage gelöscht</string>
+    <string name="fail">Hoppla, diese Frage existiert nicht</string>
+    <string name="succeed">Neue Frage hinzugefügt</string>
+    <string name="add_fail">Frage bereits vorhanden</string>
+    <string name="correct_answer_snackbar">Richtig</string>
+    <string name="c">Correct!</string>
+    <string name="wrong_answer_alert">Lernmöglichkeit (falsche Antwort)</string>
+    <string-array name="mainMenuItems">
+        <item> Quiz mich</item>
+        <item>Quizfragen</item>
+
+        <item>Anwendung verlassen</item>
+    </string-array>
+
+
+</resources>
