@@ -29,6 +29,7 @@ public class QuizActivity extends AppCompatActivity {
 
     ArrayList<String> question;
     ArrayList<String> option1;
+    TextView questionCounterText;
     ArrayList<String> option2;
     ArrayList<String> option3;
     ArrayList<String> answer;
@@ -46,10 +47,11 @@ public class QuizActivity extends AppCompatActivity {
         String selectedSubject = getIntent().getStringExtra("selectedSubject");
 
         questionText = findViewById(R.id.QuestionText);
+        questionCounterText = findViewById(R.id.questionCounterText);
         button_option1 = findViewById(R.id.button_option1);
         button_option2 = findViewById(R.id.button_option2);
         button_option3 = findViewById(R.id.button_option3);
-
+        TextView questionCounterText;
         question = new ArrayList<>();
         option1 = new ArrayList<>();
         option2 = new ArrayList<>();
@@ -101,6 +103,9 @@ public class QuizActivity extends AppCompatActivity {
             button_option1.setText(option1.get(currentQuestionIndex));
             button_option2.setText(option2.get(currentQuestionIndex));
             button_option3.setText(option3.get(currentQuestionIndex));
+
+            String counterText = "Question " + (currentQuestionIndex + 1) + " of " + question.size();
+            questionCounterText.setText(counterText);
         } else {
             showResultDialog();
         }
@@ -116,7 +121,8 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.wrong_answer_alert);
-            builder.setMessage("Your Answer:\n" + selectedOption + "\n\n\nCorrect Answer:\n" + correctAnswer);
+            String questionAlert = question.get(currentQuestionIndex);
+            builder.setMessage("Question:\n"+ questionAlert +"\n\n" + "Your Answer:\n" + selectedOption + "\n\n\nCorrect Answer:\n" + correctAnswer);
 
             builder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                 @Override
