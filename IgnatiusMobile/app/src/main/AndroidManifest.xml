@@ -21,7 +21,7 @@
         <activity
             android:name=".Quizme"
             android:exported="false"
-            android:configChanges="orientation|screenSize"
+
       />
 
         <activity
@@ -39,7 +39,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:configChanges="orientation|screenSize"
          >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
