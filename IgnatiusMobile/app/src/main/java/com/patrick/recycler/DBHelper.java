@@ -15,7 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase DB) {
 
-        DB.execSQL("create Table Questions (question TEXT primary key, subject TEXT,option1 TEXT,option2 TEXT,option3 TEXT,answer TEXT)");
+        DB.execSQL("create Table Questions (id INTEGER PRIMARY KEY AUTOINCREMENT,question TEXT , subject TEXT,option1 TEXT,option2 TEXT,option3 TEXT,answer TEXT)");
 
     }
 
@@ -29,9 +29,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public void openDatabase(SQLiteDatabase DB) {
 
-       DB = getWritableDatabase();
+        DB = getWritableDatabase();
     }
-// close DB when app is closed
+    // close DB when app is closed
     public void closeDatabase(SQLiteDatabase DB) {
         if (DB != null && DB.isOpen()) {
             DB.close();
@@ -40,8 +40,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Boolean insertquizdata(String question, String subject, String option1, String option2, String option3, String answer) {
 
+
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+
+        //cursor to check database
+
         contentValues.put("question", question);
         contentValues.put("subject", subject);
         contentValues.put("option1", option1);
@@ -63,7 +67,7 @@ public class DBHelper extends SQLiteOpenHelper {
         int result = db.delete("Questions", "question=?", whereArgs);
         return result > 0;
     }
-   // get all data method
+    // get all data method
     public Cursor getdata()
     {
         SQLiteDatabase DB = this.getWritableDatabase();
