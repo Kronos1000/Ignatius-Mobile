@@ -29,6 +29,12 @@
             />
 
         <EditText
+            android:id="@+id/questionIndex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Question ID#"
+            android:textSize="24dp"/>
+        <EditText
             android:id="@+id/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
