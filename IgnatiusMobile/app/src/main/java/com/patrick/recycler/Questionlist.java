@@ -47,12 +47,12 @@ MyAdapter adapter;
         {
             while(cursor.moveToNext())
             {
-                question.add(cursor.getString(0));
-                subject.add(cursor.getString(1));
-                option1.add(cursor.getString(2));
-                option2.add(cursor.getString(3));
-                option3.add(cursor.getString(4));
-                answer.add(cursor.getString(5));
+                question.add(cursor.getString(1));
+                subject.add(cursor.getString(2));
+                option1.add(cursor.getString(3));
+                option2.add(cursor.getString(4));
+                option3.add(cursor.getString(5));
+                answer.add(cursor.getString(6));
             }
         }
 
