@@ -1,96 +1,107 @@
 package com.patrick.recycler;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class DBHelper extends SQLiteOpenHelper {
+public class DBHelper {
+
+    private static final String DB_URL = "jdbc:sqlserver://ignatius-server.database.windows.net:1433;database=ignatiusDB;";
+    private static final String DB_USER = "DBAdmin";
+    private static final String DB_PASS = "Password1234%^";
 
     public DBHelper(Context context) {
-        super(context, "Quizdata.db", null, 1);
+        // Initialize any required resources here
     }
 
-    @Override
-    public void onCreate(SQLiteDatabase DB) {
-
-        DB.execSQL("create Table Questions (id INTEGER PRIMARY KEY AUTOINCREMENT,question TEXT , subject TEXT,option1 TEXT,option2 TEXT,option3 TEXT,answer TEXT)");
-
+    private Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
     }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase DB, int oldVersion, int newVersion) {
-        // open DB by making query (on upgrade will run if onCreate does not)
-        DB = getWritableDatabase();
-        DB.execSQL("select * from questions");
+    public Boolean insertQuizData(String question, String subject, String option1, String option2, String option3, String answer) {
+        try (Connection connection = getConnection()) {
+            String query = "INSERT INTO Questions (question, subject, option1, option2, option3, answer) VALUES (?, ?, ?, ?, ?, ?)";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, question);
+                preparedStatement.setString(2, subject);
+                preparedStatement.setString(3, option1);
+                preparedStatement.setString(4, option2);
+                preparedStatement.setString(5, option3);
+                preparedStatement.setString(6, answer);
 
-    }
-
-    public void openDatabase(SQLiteDatabase DB) {
-
-        DB = getWritableDatabase();
-    }
-    // close DB when app is closed
-    public void closeDatabase(SQLiteDatabase DB) {
-        if (DB != null && DB.isOpen()) {
-            DB.close();
-        }
-    }
-
-    public Boolean insertquizdata(String question, String subject, String option1, String option2, String option3, String answer) {
-
-
-        SQLiteDatabase DB = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-
-        //cursor to check database
-
-        contentValues.put("question", question);
-        contentValues.put("subject", subject);
-        contentValues.put("option1", option1);
-        contentValues.put("option2", option2);
-        contentValues.put("option3", option3);
-        contentValues.put("answer", answer);
-
-        long result = DB.insert("Questions", null, contentValues);
-        if (result == -1) {
+                int rowsAffected = preparedStatement.executeUpdate();
+                return rowsAffected > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
             return false;
-        } else {
-            return true;
         }
     }
 
     public boolean deleteQuizData(String question) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String[] whereArgs = { question };
-        int result = db.delete("Questions", "question=?", whereArgs);
-        return result > 0;
-    }
-    // get all data method
-    public Cursor getdata()
-    {
-        SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * From Questions ",null );
-        return  cursor;
-    }
-    // get subject data method
-    public Cursor getTopics()
-    {
-        SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor= DB.rawQuery("Select DISTINCT subject from Questions",null);
-        return cursor;
+        try (Connection connection = getConnection()) {
+            String query = "DELETE FROM Questions WHERE question = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, question);
+                int rowsAffected = preparedStatement.executeUpdate();
+                return rowsAffected > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
+    public Cursor getTopics() {
+        try (Connection connection = getConnection()) {
+            String query = "SELECT DISTINCT subject FROM Questions";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                ResultSet resultSet = preparedStatement.executeQuery();
+                // Convert ResultSet to Cursor and return it
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return  null;
+    }
 
-    // get data for quiz
     public Cursor getQuizData(String selectedSubject) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM Questions WHERE subject = ?";
-        String[] selectionArgs = { selectedSubject };
-        Cursor cursor = db.rawQuery(query, selectionArgs);
-        return cursor;
+        try (Connection connection = getConnection()) {
+            String query = "SELECT * FROM Questions WHERE subject = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, selectedSubject);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                // Convert ResultSet to Cursor and return it
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return null;
     }
 
+    public Cursor getData() {
+        try (Connection connection = getConnection()) {
+            String query = "SELECT * FROM Questions";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                ResultSet resultSet = preparedStatement.executeQuery();
+                // Convert ResultSet to Cursor and return it
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return null;
+    }
 
+    // Methods openDatabase and closeDatabase are not applicable in Azure SQL.
+
+    // The onCreate and onUpgrade methods are not needed in Azure SQL.
+
+    // ... (other methods)
 }

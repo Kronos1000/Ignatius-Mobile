@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-
 import com.google.android.material.snackbar.Snackbar;
 import com.patrick.recycler.DBHelper;
 
@@ -36,7 +34,7 @@ public class EditQuizMenu extends AppCompatActivity {
         delete = findViewById(R.id.btnDelete);
         DB = new DBHelper(this);
 
-        // view data method
+        // View data method
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,37 +42,32 @@ public class EditQuizMenu extends AppCompatActivity {
             }
         });
 
-        // insert data method
+        // Insert data method
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String questionTXT = question.getText().toString().toLowerCase().trim(); // ensure  characters are lower case as the question is currently PK
-                String subjectTXT = subject.getText().toString().toUpperCase(); // set subject to all caps
+                String questionTXT = question.getText().toString().toLowerCase().trim();
+                String subjectTXT = subject.getText().toString().toUpperCase();
                 String option1TXT = option1.getText().toString().trim();
                 String option2TXT = option2.getText().toString().trim();
                 String option3TXT = option3.getText().toString().trim();
                 String answerTXT = answer.getText().toString().trim();
 
-                boolean checkinsertdata = DB.insertquizdata(questionTXT, subjectTXT, option1TXT, option2TXT, option3TXT, answerTXT);
-                if (checkinsertdata) {
-                    // inform user that a new question has been added to the quiz bank
+                boolean checkInsertData = DB.insertQuizData(questionTXT, subjectTXT, option1TXT, option2TXT, option3TXT, answerTXT);
+                View rootView = findViewById(android.R.id.content);
 
-                    View rootView =  findViewById(android.R.id.content);
+                if (checkInsertData) {
+                    // Inform user that a new question has been added to the quiz bank
                     Snackbar.make(rootView, R.string.succeed, Snackbar.LENGTH_SHORT).show();
-                    //reset from after data submission
+                    // Reset form after data submission
                     question.setText("");
                     subject.setText("");
                     option1.setText("");
                     option2.setText("");
                     option3.setText("");
                     answer.setText("");
-
-
-
                 } else {
-                    View rootView =  findViewById(android.R.id.content);
                     Snackbar.make(rootView, R.string.add_fail, Snackbar.LENGTH_SHORT).show();
-
                 }
             }
         });
@@ -84,16 +77,11 @@ public class EditQuizMenu extends AppCompatActivity {
             public void onClick(View v) {
                 String questionTXT = question.getText().toString();
                 boolean checkDeleteData = DB.deleteQuizData(questionTXT);
-                View rootView =  findViewById(android.R.id.content);
+                View rootView = findViewById(android.R.id.content);
 
                 if (checkDeleteData) {
-
-
                     Snackbar.make(rootView, R.string.del_question_message_success, Snackbar.LENGTH_SHORT).show();
-
-
                 } else {
-
                     Snackbar.make(rootView, R.string.fail, Snackbar.LENGTH_SHORT).show();
                 }
             }
@@ -113,7 +101,7 @@ public class EditQuizMenu extends AppCompatActivity {
         builder.setCancelable(false); // Prevent dialog from being dismissed when pressing outside of it
         AlertDialog alertDialog = builder.create();
 
-// Customize the OK button color
+        // Customize the OK button color
         alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
             public void onShow(DialogInterface dialog) {
@@ -123,6 +111,5 @@ public class EditQuizMenu extends AppCompatActivity {
         });
 
         alertDialog.show();
-
     }
 }

@@ -11,14 +11,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Questionlist extends AppCompatActivity {
-RecyclerView recyclerView;
-ArrayList<String> question,subject,option1,option2,option3,answer;
-DBHelper DB;
-MyAdapter adapter;
+    RecyclerView recyclerView;
+    ArrayList<String> question, subject, option1, option2, option3, answer;
+    DBHelper DB;
+    MyAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionlist);
+
         DB = new DBHelper(this);
         question = new ArrayList<>();
         subject = new ArrayList<>();
@@ -28,25 +30,22 @@ MyAdapter adapter;
         answer = new ArrayList<>();
 
         recyclerView = findViewById(R.id.recyclerview);
-        adapter = new MyAdapter(this,question,subject,option1,option2,option3,answer);
+        adapter = new MyAdapter(this, question, subject, option1, option2, option3, answer);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        displaydata();
 
+        displayData(); // Fixed method name typo
 
+        adapter.notifyDataSetChanged(); // Notify the adapter about the data changes
     }
 
-    private void displaydata() {
-        Cursor cursor = DB.getdata();
-        if(cursor.getCount()==0)
-        {
-            Toast.makeText(Questionlist.this,"No Data",Toast.LENGTH_SHORT).show();
+    private void displayData() { // Fixed method name typo
+        Cursor cursor = DB.getData();
+        if (cursor.getCount() == 0) {
+            Toast.makeText(Questionlist.this, "No Data", Toast.LENGTH_SHORT).show();
             return;
-        }
-        else
-        {
-            while(cursor.moveToNext())
-            {
+        } else {
+            while (cursor.moveToNext()) {
                 question.add(cursor.getString(1));
                 subject.add(cursor.getString(2));
                 option1.add(cursor.getString(3));
@@ -55,8 +54,5 @@ MyAdapter adapter;
                 answer.add(cursor.getString(6));
             }
         }
-
     }
-
-
 }
