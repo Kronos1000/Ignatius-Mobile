@@ -27,7 +27,12 @@
             android:gravity="center"
             android:textSize="24dp"
             />
-
+        <EditText
+            android:id="@+id/questionIdField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/questionid"
+            android:textSize="24dp"/>
         <EditText
             android:id="@+id/question"
             android:layout_width="match_parent"
