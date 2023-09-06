@@ -11,15 +11,18 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Questionlist extends AppCompatActivity {
-RecyclerView recyclerView;
-ArrayList<String> question,subject,option1,option2,option3,answer;
-DBHelper DB;
-MyAdapter adapter;
+    RecyclerView recyclerView;
+    ArrayList<String> question, subject, option1, option2, option3, answer;
+    ArrayList<Integer> id;
+    DBHelper DB;
+    MyAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionlist);
         DB = new DBHelper(this);
+        id = new ArrayList<>();
         question = new ArrayList<>();
         subject = new ArrayList<>();
         option1 = new ArrayList<>();
@@ -28,25 +31,19 @@ MyAdapter adapter;
         answer = new ArrayList<>();
 
         recyclerView = findViewById(R.id.recyclerview);
-        adapter = new MyAdapter(this,question,subject,option1,option2,option3,answer);
+        adapter = new MyAdapter(this, id, question, subject, option1, option2, option3, answer);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         displaydata();
-
-
     }
 
     private void displaydata() {
         Cursor cursor = DB.getdata();
-        if(cursor.getCount()==0)
-        {
-            Toast.makeText(Questionlist.this,"No Data",Toast.LENGTH_SHORT).show();
-            return;
-        }
-        else
-        {
-            while(cursor.moveToNext())
-            {
+        if (cursor.getCount() == 0) {
+            Toast.makeText(Questionlist.this, "No Data", Toast.LENGTH_SHORT).show();
+        } else {
+            while (cursor.moveToNext()) {
+                id.add(cursor.getInt(0));
                 question.add(cursor.getString(1));
                 subject.add(cursor.getString(2));
                 option1.add(cursor.getString(3));
@@ -55,8 +52,7 @@ MyAdapter adapter;
                 answer.add(cursor.getString(6));
             }
         }
-
+        // Notify the adapter that the data has changed
+        adapter.notifyDataSetChanged();
     }
-
-
 }
