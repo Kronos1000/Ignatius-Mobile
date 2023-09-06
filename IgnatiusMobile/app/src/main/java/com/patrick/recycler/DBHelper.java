@@ -2,6 +2,10 @@ package com.patrick.recycler;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -73,11 +77,11 @@ public class DBHelper {
         } catch (SQLException e) {
             e.printStackTrace();
             // Handle the SQLException appropriately (e.g., log the error).
+
         }
 
         return topics;
     }
-
 
 
     public Cursor getQuizData(String selectedSubject) {
