@@ -7,10 +7,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper {
 
-    private static final String DB_URL = "jdbc:sqlserver://ignatius-server.database.windows.net:1433;database=ignatiusDB;";
+    private static final String DB_URL = "jdbc:sqlserver://ignquizdb.database.windows.net:1433;database=IgnatiusDATA;";
     private static final String DB_USER = "DBAdmin";
     private static final String DB_PASS = "Password1234%^";
 
@@ -56,19 +58,27 @@ public class DBHelper {
         }
     }
 
-    public Cursor getTopics() {
-        try (Connection connection = getConnection()) {
+    public List<String> getTopics() {
+        List<String> topics = new ArrayList<>();
+
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
             String query = "SELECT DISTINCT subject FROM Questions";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 ResultSet resultSet = preparedStatement.executeQuery();
-                // Convert ResultSet to Cursor and return it
+
+                while (resultSet.next()) {
+                    topics.add(resultSet.getString("subject"));
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
+            // Handle the SQLException appropriately (e.g., log the error).
         }
-        return  null;
+
+        return topics;
     }
+
+
 
     public Cursor getQuizData(String selectedSubject) {
         try (Connection connection = getConnection()) {

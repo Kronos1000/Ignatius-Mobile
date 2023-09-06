@@ -24,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
                                             int position, long id) {
                         // Start Quiz menu
                         if (position == 0) {
-                            Intent intent = new Intent(MainActivity.this,
-                                   Quizme.class);
+                            Intent intent = new Intent(MainActivity.this, Quizme.class);
                             startActivity(intent);
                         }
 
