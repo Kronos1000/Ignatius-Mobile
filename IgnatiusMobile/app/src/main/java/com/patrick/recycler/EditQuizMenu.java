@@ -15,7 +15,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.patrick.recycler.DBHelper;
 
 public class EditQuizMenu extends AppCompatActivity {
-    EditText question, subject, option1, option2, option3, answer;
+    EditText questionIdField, question, subject, option1, option2, option3, answer;
     Button insert, view, delete;
     DBHelper DB;
 
@@ -23,7 +23,7 @@ public class EditQuizMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_quiz_menu);
-
+        questionIdField = findViewById(R.id.questionIdField);
         question = findViewById(R.id.question);
         subject = findViewById(R.id.subject);
         option1 = findViewById(R.id.option1);
@@ -82,8 +82,9 @@ public class EditQuizMenu extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String questionTXT = question.getText().toString();
-                boolean checkDeleteData = DB.deleteQuizData(questionTXT);
+
+                String idTXT = questionIdField.getText().toString();
+                boolean checkDeleteData = DB.deleteQuizData(idTXT);
                 View rootView =  findViewById(android.R.id.content);
 
                 if (checkDeleteData) {
