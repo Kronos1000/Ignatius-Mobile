@@ -25,6 +25,8 @@
     <string name="correct_answer_snackbar">Richtig</string>
     <string name="c">Correct!</string>
     <string name="wrong_answer_alert">Lernmöglichkeit (falsche Antwort)</string>
+    <string name="questionId" />
+    <string name="questionid">QuestionID#</string>
     <string-array name="mainMenuItems">
         <item> Quiz mich</item>
         <item>Quizfragen</item>

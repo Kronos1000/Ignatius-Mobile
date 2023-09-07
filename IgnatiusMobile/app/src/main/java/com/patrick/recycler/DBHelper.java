@@ -61,10 +61,10 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean deleteQuizData(String question) {
+    public boolean deleteQuizData(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String[] whereArgs = { question };
-        int result = db.delete("Questions", "question=?", whereArgs);
+        String[] whereArgs = { id };
+        int result = db.delete("Questions", "id=?", whereArgs);
         return result > 0;
     }
     // get all data method

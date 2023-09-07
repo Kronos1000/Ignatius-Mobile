@@ -25,6 +25,8 @@
     <string name="c">Correct!</string>
     <string name="ok_button">OK</string>
     <string name="wrong_answer_alert">Learning opportunity (Incorrect Answer)</string>
+    <string name="questionId" />
+    <string name="questionid">QuestionID#</string>
 
     <string-array name="mainMenuItems">
         <item> Quiz Me</item>

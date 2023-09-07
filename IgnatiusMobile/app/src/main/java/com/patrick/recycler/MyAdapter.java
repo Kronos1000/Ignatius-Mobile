@@ -1,4 +1,5 @@
 package com.patrick.recycler;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,14 +8,17 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>
-{
-private Context context;
-private ArrayList question_id,subject_id,option1_id,option2_id,option3_id,answer_id;
 
-    public MyAdapter(Context context, ArrayList question_id, ArrayList subject_id, ArrayList option1_id, ArrayList option2_id, ArrayList option3_id, ArrayList answer_id) {
+import java.util.ArrayList;
+
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+    private Context context;
+    private ArrayList<Integer> index_id;
+    private ArrayList<String> question_id, subject_id, option1_id, option2_id, option3_id, answer_id;
+
+    public MyAdapter(Context context, ArrayList<Integer> index_id, ArrayList<String> question_id, ArrayList<String> subject_id, ArrayList<String> option1_id, ArrayList<String> option2_id, ArrayList<String> option3_id, ArrayList<String> answer_id) {
         this.context = context;
+        this.index_id = index_id;
         this.question_id = question_id;
         this.subject_id = subject_id;
         this.option1_id = option1_id;
@@ -26,40 +30,43 @@ private ArrayList question_id,subject_id,option1_id,option2_id,option3_id,answer
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.questionentry,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.questionentry, parent, false);
         return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.question_id.setText(String.valueOf((question_id.get(position))));
-        holder.subject_id.setText(String.valueOf((subject_id.get(position))));
-     // Remove comments to display all info in recycler
-        /*   holder.option1_id.setText(String.valueOf((option1_id.get(position))));
-        holder.option2_id.setText(String.valueOf((option2_id.get(position))));
-        holder.option3_id.setText(String.valueOf((option3_id.get(position)))); */
-
-        holder.answer_id.setText(String.valueOf((answer_id.get(position))));
+        holder.id.setText(String.valueOf(index_id.get(position)));
+        holder.question_id.setText(question_id.get(position));
+        holder.subject_id.setText(subject_id.get(position));
+        // Uncomment the lines below to display other fields
+        /*
+        holder.option1_id.setText(option1_id.get(position));
+        holder.option2_id.setText(option2_id.get(position));
+        holder.option3_id.setText(option3_id.get(position));
+        */
+        holder.answer_id.setText(answer_id.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return question_id.size();
+        return index_id.size();
     }
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView question_id,subject_id,answer_id;
 
-        // ***  use the line below to diplay all possible answer choices in recycler view
-        // switch comment tag from line below to line above
-        // TextView question_id,subject_id,option1_id,option2_id,option3_id,answer_id;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView id, question_id, subject_id, answer_id;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            id = itemView.findViewById(R.id.textId);
             question_id = itemView.findViewById(R.id.textQuestion);
             subject_id = itemView.findViewById(R.id.textSubject);
-            // remove the comment tag on the line below  to show full info
-        /*   option1_id = itemView.findViewById(R.id.textOption1);
+            // Uncomment the lines below to add TextViews for other fields
+            /*
+            option1_id = itemView.findViewById(R.id.textOption1);
             option2_id = itemView.findViewById(R.id.textOption2);
-            option3_id = itemView.findViewById(R.id.textOption3); */
+            option3_id = itemView.findViewById(R.id.textOption3);
+            */
             answer_id = itemView.findViewById(R.id.textAnswer);
         }
     }
