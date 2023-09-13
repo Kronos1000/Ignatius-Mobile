@@ -1,5 +1,7 @@
-V1.2: Minor Changes after submission date 
+V1.2: Minor Changes after submission date  (Submission build)
 
-V1.3: Added Backend logic for question indexing '
+V1.3: Added Backend logic for question indexing (Stable build) 
 
 v1.4: Set the application to dlete quwetions using the id# as the primary key instead of the question as it was in the original build
+
+v1.5 Fix Show questions menu glitch 
