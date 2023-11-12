@@ -2,6 +2,8 @@ V1.2: Minor Changes after submission date  (Submission build)
 
 V1.3: Added Backend logic for question indexing (Stable build) 
 
-v1.4: Set the application to dlete quwetions using the id# as the primary key instead of the question as it was in the original build
+v1.4: Set the application to dlete questions using the id# as the primary key instead of the question as it was in the original build
 
 v1.5 Fix Show questions menu glitch 
+
+v1.6 order subjects by name, ad counter to show incorrect answers during quiz 
