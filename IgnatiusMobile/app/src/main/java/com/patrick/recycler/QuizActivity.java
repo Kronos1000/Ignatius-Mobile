@@ -141,7 +141,7 @@ public class QuizActivity extends AppCompatActivity {
         builder.setTitle(R.string.wrong_answer_alert);
         builder.setMessage("Question:\n" + questionText + "\n\n" +
                 "Your Answer:\n" + selectedOption + "\n\n\n" +
-                "Correct Answer:\n" + correctAnswer);
+                "Correct Answer:\n" + correctAnswer + "\n\n\n");
 
         builder.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
             @Override
