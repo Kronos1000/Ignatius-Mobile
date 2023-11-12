@@ -78,7 +78,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public Cursor getTopics()
     {
         SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor= DB.rawQuery("Select DISTINCT subject from Questions",null);
+        Cursor cursor = DB.rawQuery("SELECT DISTINCT subject FROM Questions ORDER BY subject ASC", null);
+
         return cursor;
     }
 

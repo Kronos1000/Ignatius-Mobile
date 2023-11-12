@@ -29,12 +29,15 @@ public class QuizActivity extends AppCompatActivity {
 
     ArrayList<String> question;
     ArrayList<String> option1;
+
+  TextView incorrectAnswerText;
     TextView questionCounterText;
     ArrayList<String> option2;
     ArrayList<String> option3;
     ArrayList<String> answer;
     int currentQuestionIndex;
     int rightAnswers;
+    int wrongAnswers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,7 @@ public class QuizActivity extends AppCompatActivity {
 
         questionText = findViewById(R.id.QuestionText);
         questionCounterText = findViewById(R.id.questionCounterText);
+        incorrectAnswerText = findViewById(R.id.incorrectAnswerText);
         button_option1 = findViewById(R.id.button_option1);
         button_option2 = findViewById(R.id.button_option2);
         button_option3 = findViewById(R.id.button_option3);
@@ -59,6 +63,7 @@ public class QuizActivity extends AppCompatActivity {
         answer = new ArrayList<>();
         currentQuestionIndex = 0;
         rightAnswers = 0;
+        wrongAnswers = 0;
 
         loadQuizData(selectedSubject);
 
@@ -101,12 +106,15 @@ public class QuizActivity extends AppCompatActivity {
     private void displayQuestion() {
         if (currentQuestionIndex < question.size()) {
             questionText.setText(question.get(currentQuestionIndex));
+            incorrectAnswerText.setText("Incorrect Answers: "+ wrongAnswers);
             button_option1.setText(option1.get(currentQuestionIndex));
             button_option2.setText(option2.get(currentQuestionIndex));
             button_option3.setText(option3.get(currentQuestionIndex));
 
             String counterText = "Question " + (currentQuestionIndex + 1) + " of " + question.size();
+
             questionCounterText.setText(counterText);
+
         } else {
             showResultDialog();
         }
@@ -120,6 +128,7 @@ public class QuizActivity extends AppCompatActivity {
 
             rightAnswers++;
         } else {
+            wrongAnswers++;
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.wrong_answer_alert);
             String questionAlert = question.get(currentQuestionIndex);
