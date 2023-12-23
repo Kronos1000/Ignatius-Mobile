@@ -15,102 +15,66 @@
         android:layout_margin="5dp"
         android:orientation="vertical">
 
-
+        <!-- Display the formatted question ID -->
         <TextView
-            android:id="@+id/id"
+            android:id="@+id/questionId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="QuestionID# "
             android:textSize="24dp"
             android:textColor="@color/black"
             android:textStyle="bold" />
-        <TextView
-            android:id="@+id/textId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Question: "
-            android:textSize="24dp"
-            android:textColor="@color/black"
-            />
 
-        <TextView
-            android:id="@+id/question"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Question: "
-            android:textSize="24dp"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+        <!-- Display only the question text -->
         <TextView
             android:id="@+id/textQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Question: "
             android:textSize="24dp"
-            android:textColor="@color/black"
-         />
+            android:textColor="@color/black" />
 
-        <TextView
-            android:id="@+id/subject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Subject: "
-            android:textSize="24dp"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+        <!-- Remove comments to show other possible fields in recycler -->
+        <!--
         <TextView
             android:id="@+id/textSubject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24dp"
-            android:textColor="@color/black"
-             />
+            android:textColor="@color/black" />
 
-<!-- Remove comments to show possible answer choices in recycler -->
-     <!--   <TextView
+        <TextView
             android:id="@+id/textOption1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Option1: "
             android:textSize="24dp"
             android:textColor="@color/black"
             android:textStyle="bold" />
-
 
         <TextView
             android:id="@+id/textOption2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Option2: "
             android:textSize="24dp"
             android:textColor="@color/black"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/textOption3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Option3: "
             android:textSize="24dp"
             android:textColor="@color/black"
             android:textStyle="bold" />
-        -->
-        <TextView
-            android:id="@+id/correctanswer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Answer: "
-            android:textSize="24dp"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/textAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Answer: "
             android:textSize="24dp"
             android:textColor="@color/black"
-           />
-
+            android:textStyle="bold" />
+        -->
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

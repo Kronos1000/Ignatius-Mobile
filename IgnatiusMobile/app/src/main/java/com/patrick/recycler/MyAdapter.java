@@ -35,18 +35,31 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     @Override
+
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.id.setText(String.valueOf(index_id.get(position)));
-        holder.question_id.setText(question_id.get(position));
-        holder.subject_id.setText(subject_id.get(position));
-        // Uncomment the lines below to display other fields
-        /*
-        holder.option1_id.setText(option1_id.get(position));
-        holder.option2_id.setText(option2_id.get(position));
-        holder.option3_id.setText(option3_id.get(position));
-        */
-        holder.answer_id.setText(answer_id.get(position));
+        // Get the question ID and text
+        int currentId = index_id.get(position);
+        String currentQuestion = question_id.get(position);
+
+        // Format the question ID in brackets
+        String formattedQuestionId = "[" + currentId + "] ";
+
+        // Concatenate the formatted question ID with the question text
+        String displayText =  currentQuestion;
+
+        // Set the concatenated text to the appropriate TextViews
+        holder.id.setText(formattedQuestionId);
+        holder.question_id.setText(displayText);
+        // Set other TextViews as needed
+    /*
+    holder.subject_id.setText(subject_id.get(position));
+    holder.option1_id.setText(option1_id.get(position));
+    holder.option2_id.setText(option2_id.get(position));
+    holder.option3_id.setText(option3_id.get(position));
+    holder.answer_id.setText(answer_id.get(position));
+    */
     }
+
 
     @Override
     public int getItemCount() {
@@ -58,16 +71,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            id = itemView.findViewById(R.id.textId);
+     id = itemView.findViewById(R.id.questionId);
             question_id = itemView.findViewById(R.id.textQuestion);
-            subject_id = itemView.findViewById(R.id.textSubject);
             // Uncomment the lines below to add TextViews for other fields
             /*
+            subject_id = itemView.findViewById(R.id.textSubject);
+
             option1_id = itemView.findViewById(R.id.textOption1);
             option2_id = itemView.findViewById(R.id.textOption2);
             option3_id = itemView.findViewById(R.id.textOption3);
-            */
+
             answer_id = itemView.findViewById(R.id.textAnswer);
+            */
+
         }
     }
 }

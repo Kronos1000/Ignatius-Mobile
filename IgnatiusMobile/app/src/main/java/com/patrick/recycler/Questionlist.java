@@ -45,11 +45,11 @@ public class Questionlist extends AppCompatActivity {
             while (cursor.moveToNext()) {
                 id.add(cursor.getInt(0));
                 question.add(cursor.getString(1));
-                subject.add(cursor.getString(2));
-                option1.add(cursor.getString(3));
-                option2.add(cursor.getString(4));
-                option3.add(cursor.getString(5));
-                answer.add(cursor.getString(6));
+//              subject.add(cursor.getString(2));
+//               option1.add(cursor.getString(3));
+//              option2.add(cursor.getString(4));
+//              option3.add(cursor.getString(5));
+//                answer.add(cursor.getString(6));
             }
         }
         // Notify the adapter that the data has changed

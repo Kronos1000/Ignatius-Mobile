@@ -7,3 +7,5 @@ v1.4: Set the application to dlete questions using the id# as the primary key in
 v1.5 Fix Show questions menu glitch 
 
 v1.6 order subjects by name, ad counter to show incorrect answers during quiz 
+
+v1.7 Changed THe recycler view that is connected the question list acvtivity to only show id number and question to improve usability for a larger question bank 
