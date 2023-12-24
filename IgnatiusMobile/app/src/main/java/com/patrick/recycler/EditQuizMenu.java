@@ -100,7 +100,7 @@ public class EditQuizMenu extends AppCompatActivity {
 //            }
 //        });
 
-        // Show an alert dialog when the activity is created
+        // Show an alert dialog when the activity is created (uncomment code block to re enable alert box)
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.instruction_alert_heading);
         builder.setMessage(R.string.Instruction_Text);
@@ -125,5 +125,5 @@ public class EditQuizMenu extends AppCompatActivity {
 
         alertDialog.show();
 
+        }
     }
-}
