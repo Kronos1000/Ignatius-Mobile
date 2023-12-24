@@ -37,12 +37,12 @@ public class EditQuizMenu extends AppCompatActivity {
         DB = new DBHelper(this);
 
         // view data method
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(EditQuizMenu.this, Questionlist.class));
-            }
-        });
+//        view.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(EditQuizMenu.this, Questionlist.class));
+//            }
+//        });
 
         // insert data method
         insert.setOnClickListener(new View.OnClickListener() {
@@ -79,26 +79,26 @@ public class EditQuizMenu extends AppCompatActivity {
             }
         });
 
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String idTXT = questionIdField.getText().toString();
-                boolean checkDeleteData = DB.deleteQuizData(idTXT);
-                View rootView =  findViewById(android.R.id.content);
-
-                if (checkDeleteData) {
-
-
-                    Snackbar.make(rootView, R.string.del_question_message_success, Snackbar.LENGTH_SHORT).show();
-
-
-                } else {
-
-                    Snackbar.make(rootView, R.string.fail, Snackbar.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                String idTXT = questionIdField.getText().toString();
+//                boolean checkDeleteData = DB.deleteQuizData(idTXT);
+//                View rootView =  findViewById(android.R.id.content);
+//
+//                if (checkDeleteData) {
+//
+//
+//                    Snackbar.make(rootView, R.string.del_question_message_success, Snackbar.LENGTH_SHORT).show();
+//
+//
+//                } else {
+//
+//                    Snackbar.make(rootView, R.string.fail, Snackbar.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
         // Show an alert dialog when the activity is created
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

@@ -38,11 +38,17 @@ public class MainActivity extends AppCompatActivity {
                         }
 
 
+                        // Go to quiz menu option
+                        if (position == 2) {
+                            Intent intent = new Intent(MainActivity.this,
+                                    Questionlist.class);
+                            startActivity(intent);
+                        }
 
 
                         // Exit Application
 
-                        if (position == 2) {
+                        if (position == 3) {
                             finish();
                             System.exit(0);
                         }

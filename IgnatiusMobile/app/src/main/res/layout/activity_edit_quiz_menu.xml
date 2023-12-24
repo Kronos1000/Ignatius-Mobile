@@ -27,12 +27,12 @@
             android:gravity="center"
             android:textSize="24dp"
             />
-        <EditText
-            android:id="@+id/questionIdField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/questionid"
-            android:textSize="24dp"/>
+<!--        <EditText-->
+<!--            android:id="@+id/questionIdField"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="@string/questionid"-->
+<!--            android:textSize="24dp"/>-->
         <EditText
             android:id="@+id/question"
             android:layout_width="match_parent"
@@ -87,24 +87,24 @@
 
 
 
-        <Button
-            android:id="@+id/btnView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/show_all_questions"
-            android:backgroundTint="#12bb08"/>
+<!--        <Button-->
+<!--            android:id="@+id/btnView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:text="@string/show_all_questions"-->
+<!--            android:backgroundTint="#12bb08"/>-->
 
 
 
 
-        <Button
-            android:id="@+id/btnDelete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/delete_question"
-            android:backgroundTint="#12bb08"/>
+<!--        <Button-->
+<!--            android:id="@+id/btnDelete"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:text="@string/delete_question"-->
+<!--            android:backgroundTint="#12bb08"/>-->
 
     </LinearLayout>
 </ScrollView>
