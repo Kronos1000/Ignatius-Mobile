@@ -23,7 +23,7 @@ public class EditQuestions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quizme);
+        setContentView(R.layout.activity_edit_questions);
         DB = new DBHelper(this);
 
         subjects = new ArrayList<>();
