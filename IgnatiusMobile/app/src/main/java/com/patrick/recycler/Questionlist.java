@@ -3,11 +3,9 @@ package com.patrick.recycler;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class Questionlist extends AppCompatActivity {
@@ -31,7 +29,7 @@ public class Questionlist extends AppCompatActivity {
         answer = new ArrayList<>();
 
         recyclerView = findViewById(R.id.recyclerview);
-        adapter = new MyAdapter(this, id, question, subject, option1, option2, option3, answer);
+        adapter = new MyAdapter(this, id, question, subject, option1, option2, option3, answer, DB);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         displaydata();
@@ -45,11 +43,14 @@ public class Questionlist extends AppCompatActivity {
             while (cursor.moveToNext()) {
                 id.add(cursor.getInt(0));
                 question.add(cursor.getString(1));
-//              subject.add(cursor.getString(2));
-//               option1.add(cursor.getString(3));
-//              option2.add(cursor.getString(4));
-//              option3.add(cursor.getString(5));
-//                answer.add(cursor.getString(6));
+                // Uncomment the lines below if you have fields like subject, option1, option2, option3, and answer
+                /*
+                subject.add(cursor.getString(2));
+                option1.add(cursor.getString(3));
+                option2.add(cursor.getString(4));
+                option3.add(cursor.getString(5));
+                answer.add(cursor.getString(6));
+                */
             }
         }
         // Notify the adapter that the data has changed

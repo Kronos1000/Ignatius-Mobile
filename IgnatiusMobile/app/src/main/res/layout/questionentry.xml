@@ -75,6 +75,14 @@
             android:textColor="@color/black"
             android:textStyle="bold" />
         -->
+
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_delete"
+            android:contentDescription="Delete"
+            android:layout_gravity="end"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
