@@ -3,7 +3,6 @@ package com.patrick.recycler;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -12,9 +11,8 @@ import android.widget.EditText;
 
 
 import com.google.android.material.snackbar.Snackbar;
-import com.patrick.recycler.DBHelper;
 
-public class EditQuizMenu extends AppCompatActivity {
+public class AddQuestions extends AppCompatActivity {
     EditText questionIdField, question, subject, option1, option2, option3, answer;
     Button insert, view, delete;
     DBHelper DB;
@@ -22,7 +20,7 @@ public class EditQuizMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_quiz_menu);
+        setContentView(R.layout.activity_add_questions);
         questionIdField = findViewById(R.id.questionIdField);
         question = findViewById(R.id.question);
         subject = findViewById(R.id.subject);

@@ -4,10 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.content.Intent;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.os.Bundle;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,15 +28,15 @@ public class MainActivity extends AppCompatActivity {
                         }
 
 
-                        // Go to quiz menu option
+                        // Go to add questions menu
                         if (position == 1) {
                             Intent intent = new Intent(MainActivity.this,
-                                   EditQuizMenu.class);
+                                   AddQuestions.class);
                             startActivity(intent);
                         }
 
 
-                        // Go to quiz menu option
+                        // show/delete questions
                         if (position == 2) {
                             Intent intent = new Intent(MainActivity.this,
                                     Questionlist.class);

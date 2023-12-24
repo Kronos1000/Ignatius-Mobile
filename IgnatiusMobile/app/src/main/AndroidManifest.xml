@@ -25,7 +25,7 @@
       />
 
         <activity
-            android:name=".EditQuizMenu"
+            android:name=".AddQuestions"
             android:exported="false"
             android:configChanges="orientation|screenSize"/>
 
