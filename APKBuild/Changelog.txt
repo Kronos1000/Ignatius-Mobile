@@ -14,3 +14,5 @@ v1.7: Changed The recycler view that is connected the question list acvtivity to
 v1.8: add delete question button to recycler view  
 
 v1.9: update application UI to accomodate the functionality of the v1.8 update
+
+v2.0: Remove banner from show questions menu  to  better utlize availible screen size the recycler view 
