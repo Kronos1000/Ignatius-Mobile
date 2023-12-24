@@ -37,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
 
                         // show/delete questions
+
                         if (position == 2) {
                             Intent intent = new Intent(MainActivity.this,
-                                    Questionlist.class);
+                                    EditQuestions.class);
                             startActivity(intent);
                         }
-
 
                         // Exit Application
 

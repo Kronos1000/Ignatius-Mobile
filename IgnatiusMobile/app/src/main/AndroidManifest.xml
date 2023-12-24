@@ -29,6 +29,10 @@
             android:exported="false"
             android:configChanges="orientation|screenSize"/>
 
+        <activity
+            android:name=".EditQuestions"
+            android:exported="false"
+            android:configChanges="orientation|screenSize"/>
 
 
         <activity

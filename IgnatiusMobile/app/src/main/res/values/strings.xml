@@ -34,11 +34,12 @@
     <string name="wrong_answer_alert">Learning opportunity (Incorrect Answer)</string>
     <string name="questionId" />
     <string name="questionid">QuestionID#</string>
-
+    <string name="show_question_text">Select Quiz topic to view questions</string>
     <string-array name="mainMenuItems">
         <item> Quiz Me</item>
         <item>Add New Questions</item>
         <item> Show/Delete Questions</item>
+
         <item>Exit Application</item>
     </string-array>
 
