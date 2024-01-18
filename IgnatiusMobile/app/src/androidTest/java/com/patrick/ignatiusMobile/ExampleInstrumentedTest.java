@@ -1,4 +1,4 @@
-package com.patrick.recycler;
+package com.patrick.ignatiusMobile;
 
 import android.content.Context;
 

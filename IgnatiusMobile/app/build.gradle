@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.patrick.recycler'
+    namespace 'com.patrick.ignatiusMobile'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.patrick.recycler"
+        applicationId "com.patrick.ignatiusMobile"
         minSdk 26
         targetSdk 33
         versionCode 1

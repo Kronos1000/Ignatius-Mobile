@@ -1,4 +1,4 @@
-package com.patrick.recycler;
+package com.patrick.ignatiusMobile;
 
 import org.junit.Test;
 
