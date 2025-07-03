@@ -41,7 +41,7 @@
         <item> Quiz Me</item>
         <item>Add New Questions</item>
         <item> Show/Delete Questions</item>
-        <item>Import  CSV File</item>
+        <item>Import/Export CSV File</item>
         <item>Exit Application</item>
     </string-array>
 
