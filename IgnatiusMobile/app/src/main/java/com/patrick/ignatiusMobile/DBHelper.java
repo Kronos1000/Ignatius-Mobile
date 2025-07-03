@@ -1,22 +1,19 @@
 package com.patrick.ignatiusMobile;
 
-import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.BufferedWriter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -26,37 +23,26 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-
-        DB.execSQL("create Table Questions (id INTEGER PRIMARY KEY AUTOINCREMENT,question TEXT , subject TEXT,option1 TEXT,option2 TEXT,option3 TEXT,answer TEXT)");
-
+        DB.execSQL("CREATE TABLE IF NOT EXISTS Questions (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "question TEXT, " +
+                "subject TEXT, " +
+                "option1 TEXT, " +
+                "option2 TEXT, " +
+                "option3 TEXT, " +
+                "answer TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int oldVersion, int newVersion) {
-        // open DB by making query (on upgrade will run if onCreate does not)
-        DB = getWritableDatabase();
-        DB.execSQL("select * from questions");
-
+        DB.execSQL("DROP TABLE IF EXISTS Questions");
+        onCreate(DB);
     }
 
-    public void openDatabase(SQLiteDatabase DB) {
-
-        DB = getWritableDatabase();
-    }
-    // close DB when app is closed
-    public void closeDatabase(SQLiteDatabase DB) {
-        if (DB != null && DB.isOpen()) {
-            DB.close();
-        }
-    }
-
-    public Boolean insertquizdata(String question, String subject, String option1, String option2, String option3, String answer) {
-
-
+    public Boolean insertQuizData(String question, String subject,
+                                  String option1, String option2, String option3, String answer) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-
-        //cursor to check database
 
         contentValues.put("question", question);
         contentValues.put("subject", subject);
@@ -66,11 +52,31 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("answer", answer);
 
         long result = DB.insert("Questions", null, contentValues);
-        if (result == -1) {
-            return false;
-        } else {
-            return true;
-        }
+        return result != -1;
+    }
+
+    public boolean deleteQuizData(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] whereArgs = { id };
+        int result = db.delete("Questions", "id=?", whereArgs);
+        return result > 0;
+    }
+
+    public Cursor getdata() {
+        SQLiteDatabase DB = this.getReadableDatabase();
+        return DB.rawQuery("SELECT * FROM Questions", null);
+    }
+
+    public Cursor getTopics() {
+        SQLiteDatabase DB = this.getReadableDatabase();
+        return DB.rawQuery("SELECT DISTINCT subject FROM Questions ORDER BY subject ASC", null);
+    }
+
+    public Cursor getQuizData(String selectedSubject) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM Questions WHERE subject = ?";
+        String[] selectionArgs = { selectedSubject };
+        return db.rawQuery(query, selectionArgs);
     }
 
     public boolean importCSVFromUri(Context context, Uri uri) {
@@ -82,6 +88,11 @@ public class DBHelper extends SQLiteOpenHelper {
             String line;
 
             while ((line = reader.readLine()) != null) {
+                // Skip header if present
+                if (line.toLowerCase().contains("question") && line.toLowerCase().contains("subject")) {
+                    continue;
+                }
+
                 String[] tokens = line.split(",");
                 if (tokens.length != 6) {
                     allInserted = false;
@@ -109,38 +120,39 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+    public boolean exportCSVToUri(Context context, Uri uri) {
+        Cursor cursor = getdata();
+        if (cursor == null || cursor.getCount() == 0) {
+            Toast.makeText(context, "No data to export", Toast.LENGTH_SHORT).show();
+            if (cursor != null) cursor.close();
+            return false;
+        }
 
-    public boolean deleteQuizData(String id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String[] whereArgs = { id };
-        int result = db.delete("Questions", "id=?", whereArgs);
-        return result > 0;
+        try (OutputStream outputStream = context.getContentResolver().openOutputStream(uri);
+             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream))) {
+
+            writer.write("question,subject,option1,option2,option3,answer\n");
+
+            while (cursor.moveToNext()) {
+                String question = cursor.getString(cursor.getColumnIndexOrThrow("question")).replace(",", " ");
+                String subject = cursor.getString(cursor.getColumnIndexOrThrow("subject")).replace(",", " ");
+                String option1 = cursor.getString(cursor.getColumnIndexOrThrow("option1")).replace(",", " ");
+                String option2 = cursor.getString(cursor.getColumnIndexOrThrow("option2")).replace(",", " ");
+                String option3 = cursor.getString(cursor.getColumnIndexOrThrow("option3")).replace(",", " ");
+                String answer = cursor.getString(cursor.getColumnIndexOrThrow("answer")).replace(",", " ");
+
+                writer.write(String.format("%s,%s,%s,%s,%s,%s\n", question, subject, option1, option2, option3, answer));
+            }
+
+            writer.flush();
+            cursor.close();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (cursor != null) cursor.close();
+            return false;
+        }
     }
-    // get all data method
-    public Cursor getdata()
-    {
-        SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * From Questions ",null );
-        return  cursor;
-    }
-    // get subject data method
-    public Cursor getTopics()
-    {
-        SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("SELECT DISTINCT subject FROM Questions ORDER BY subject ASC", null);
-
-        return cursor;
-    }
-
-
-    // get data for quiz
-    public Cursor getQuizData(String selectedSubject) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM Questions WHERE subject = ?";
-        String[] selectionArgs = { selectedSubject };
-        Cursor cursor = db.rawQuery(query, selectionArgs);
-        return cursor;
-    }
-
 
 }

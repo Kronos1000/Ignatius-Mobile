@@ -53,7 +53,7 @@ public class AddQuestions extends AppCompatActivity {
                 String option3TXT = option3.getText().toString().trim();
                 String answerTXT = answer.getText().toString().trim();
 
-                boolean checkinsertdata = DB.insertquizdata(questionTXT, subjectTXT, option1TXT, option2TXT, option3TXT, answerTXT);
+                boolean checkinsertdata = DB.insertQuizData(questionTXT, subjectTXT, option1TXT, option2TXT, option3TXT, answerTXT);
                 if (checkinsertdata) {
                     // inform user that a new question has been added to the quiz bank
 

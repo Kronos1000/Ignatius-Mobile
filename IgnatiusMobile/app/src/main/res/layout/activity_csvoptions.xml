@@ -31,6 +31,14 @@
             android:backgroundTint="#12bb08"
             />
 
+        <Button
+            android:id="@+id/btnExport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/export_csv_button_text"
+            android:backgroundTint="#12bb08"
+            />
 
 
     </LinearLayout>
