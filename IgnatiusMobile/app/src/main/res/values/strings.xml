@@ -2,6 +2,7 @@
     <string name="app_name">Ignatius</string>
     <string name="add_new_quiz_question_title">Add New Quiz Question</string>
     <string name="edit_quiz_content">Add New Question</string>
+    <string name="import_csv_button_text">Import csv file</string>
     <string name="question">Question</string>
     <string name="subject">Subject</string>
     <string name="option1">Option1</string>
@@ -39,7 +40,7 @@
         <item> Quiz Me</item>
         <item>Add New Questions</item>
         <item> Show/Delete Questions</item>
-
+        <item>Import  CSV File</item>
         <item>Exit Application</item>
     </string-array>
 

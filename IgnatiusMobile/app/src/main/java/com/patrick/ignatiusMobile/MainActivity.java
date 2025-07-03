@@ -44,9 +44,15 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
 
+                        if(position == 3)
+                        {
+                            Intent intent = new Intent(MainActivity.this,
+                                    CSVOptions.class);
+                            startActivity(intent);
+                        }
                         // Exit Application
 
-                        if (position == 3) {
+                        if (position == 4) {
                             finish();
                             System.exit(0);
                         }
