@@ -2,6 +2,8 @@
     <string name="app_name">Ignatius</string>
     <string name="add_new_quiz_question_title">Neue Quizfrage hinzufügen</string>
     <string name="edit_quiz_content">Neue Frage hinzufügen</string>
+    <string name="import_csv_button_text">CSV-Datei importieren</string>
+    <string name="export_csv_button_text">Als CSV exportieren</string>
     <string name="question">Frage</string>
     <string name="subject">Thema</string>
     <string name="option1">Möglichkeit eins</string>
@@ -43,6 +45,7 @@
     <string-array name="mainMenuItems">
         <item> Quiz mich</item>
         <item>neue Fragen hinzufügen</item>
+        <item>CSV-Datei importieren/exportieren</item>
         <item>Fragen anzeigen/löschen</item>
         <item>Anwendung verlassen</item>
     </string-array>
