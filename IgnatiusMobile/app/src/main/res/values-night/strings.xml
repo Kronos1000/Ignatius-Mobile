@@ -2,4 +2,12 @@
 <resources>
     <string name="questionId" />
     <string name="questionid">QuestionID#</string>
+
+
+    <string-array name="CSVMenuItems">
+        <item> Import data from CSV File </item>
+        <item> Export data to CSV File</item>
+
+    </string-array>
+
 </resources>

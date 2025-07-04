@@ -50,5 +50,9 @@
         <item>Anwendung verlassen</item>
     </string-array>
 
+    <string-array name="CSVMenuItems">
+        <item>Daten aus CSV-Datei importieren</item>
+        <item>Daten in CSV-Datei exportieren</item>
+    </string-array>
 
 </resources>

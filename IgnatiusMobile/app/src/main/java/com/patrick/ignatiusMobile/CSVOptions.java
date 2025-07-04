@@ -4,8 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -20,38 +19,39 @@ public class CSVOptions extends AppCompatActivity {
 
     private static final int PICK_CSV_FILE = 100;
     private static final int CREATE_CSV_FILE = 101;
-    Button importCSV,exportCSV;
     private DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_csvoptions); // Update layout name if different
+        setContentView(R.layout.activity_csvoptions); // Ensure this matches your updated XML file
 
         DB = new DBHelper(this);
 
-      importCSV = findViewById(R.id.btnImport); // Button ID must match layout XML
-        exportCSV = findViewById(R.id.btnExport);
+        // If you want to handle clicks from the ListView items:
+        ListView optionsList = findViewById(R.id.list_options);
+        optionsList.setOnItemClickListener((parent, view, position, id) -> {
+            switch (position) {
+                case 0:
+                    // Import CSV
+                    Intent importIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                    importIntent.setType("text/*");
+                    importIntent.addCategory(Intent.CATEGORY_OPENABLE);
+                    startActivityForResult(importIntent, PICK_CSV_FILE);
+                    break;
 
+                case 1:
+                    // Export CSV
+                    Intent exportIntent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+                    exportIntent.setType("text/csv");
+                    exportIntent.putExtra(Intent.EXTRA_TITLE, "quiz_export.csv");
+                    exportIntent.addCategory(Intent.CATEGORY_OPENABLE);
+                    startActivityForResult(exportIntent, CREATE_CSV_FILE);
+                    break;
 
-        importCSV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                intent.setType("text/*");
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                startActivityForResult(intent, PICK_CSV_FILE);
-            }
-        });
-
-        exportCSV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
-                intent.setType("text/csv");
-                intent.putExtra(Intent.EXTRA_TITLE, "quiz_export.csv");
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                startActivityForResult(intent, CREATE_CSV_FILE);
+                default:
+                    Toast.makeText(this, "Unknown option selected", Toast.LENGTH_SHORT).show();
+                    break;
             }
         });
     }
@@ -65,19 +65,14 @@ public class CSVOptions extends AppCompatActivity {
 
             if (requestCode == PICK_CSV_FILE) {
                 boolean success = DB.importCSVFromUri(this, uri);
-                if (success) {
-                    Toast.makeText(this, "CSV imported successfully", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(this, "Some or all rows failed to import", Toast.LENGTH_LONG).show();
-                }
-
+                Toast.makeText(this,
+                        success ? "CSV imported successfully" : "Some or all rows failed to import",
+                        Toast.LENGTH_SHORT).show();
             } else if (requestCode == CREATE_CSV_FILE) {
                 boolean success = exportCSVToUri(uri);
-                if (success) {
-                    Toast.makeText(this, "CSV exported successfully", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(this, "Failed to export CSV", Toast.LENGTH_SHORT).show();
-                }
+                Toast.makeText(this,
+                        success ? "CSV exported successfully" : "Failed to export CSV",
+                        Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -102,9 +97,8 @@ public class CSVOptions extends AppCompatActivity {
                 String option3 = cursor.getString(cursor.getColumnIndexOrThrow("option3")).replace(",", " ");
                 String answer = cursor.getString(cursor.getColumnIndexOrThrow("answer")).replace(",", " ");
 
-                String row = String.format("%s,%s,%s,%s,%s,%s\n",
-                        question, subject, option1, option2, option3, answer);
-                writer.write(row);
+                writer.write(String.format("%s,%s,%s,%s,%s,%s\n",
+                        question, subject, option1, option2, option3, answer));
             }
 
             writer.flush();

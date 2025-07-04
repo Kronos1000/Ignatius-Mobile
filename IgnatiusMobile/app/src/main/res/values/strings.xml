@@ -37,6 +37,7 @@
     <string name="questionId" />
     <string name="questionid">QuestionID#</string>
     <string name="show_question_text">Select Quiz topic to view questions</string>
+
     <string-array name="mainMenuItems">
         <item> Quiz Me</item>
         <item>Add New Questions</item>
@@ -45,5 +46,11 @@
         <item>Exit Application</item>
     </string-array>
 
+
+    <string-array name="CSVMenuItems">
+        <item> Import data from CSV File </item>
+        <item> Export data to CSV File</item>
+
+    </string-array>
 
 </resources>
