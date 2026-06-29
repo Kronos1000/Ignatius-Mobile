@@ -1,0 +1,39 @@
+# CSV Question Import Instructions
+
+You can add questions to the app by importing a CSV file.
+
+# CSV Format
+
+Each row in the CSV file must follow this format:
+
+question,subject,option1,option2,option3,answer
+
+# Column Descriptions
+
+question  - The question text.
+
+subject   - The subject or category of the question.
+
+option1   - The first answer option.
+
+option2   - The second answer option.
+
+option3   - The third answer option.
+
+answer    - The correct answer. This must exactly match one of the answer options.
+
+# Important Rules
+
+* Each question must be on its own row.
+* The answer must exactly match one of the values in option1, option2, or option3.
+* Matching is case-sensitive and includes all spaces and punctuation.
+* The first row can be used as a header (recommended).
+
+# Example
+
+question,subject,option1,option2,option3,answer
+What is the capital of France?,Geography,London,Paris,Rome,Paris
+What is 5 + 3?,Math,6,7,8,8
+What colour is the sky on a clear day?,Science,Blue,Green,Red,Blue
+
+If the answer does not exactly match one of the options, the question may fail to import correctly.
