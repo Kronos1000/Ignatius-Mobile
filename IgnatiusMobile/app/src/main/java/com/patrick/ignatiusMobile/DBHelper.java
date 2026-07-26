@@ -88,26 +88,33 @@ public class DBHelper extends SQLiteOpenHelper {
             String line;
 
             while ((line = reader.readLine()) != null) {
+
                 // Skip header if present
                 if (line.toLowerCase().contains("question") && line.toLowerCase().contains("subject")) {
                     continue;
                 }
 
                 String[] tokens = line.split(",");
-                if (tokens.length != 6) {
+
+                // Now expecting ID + 6 data fields
+                if (tokens.length != 7) {
                     allInserted = false;
                     continue;
                 }
 
                 ContentValues values = new ContentValues();
-                values.put("question", tokens[0].trim());
-                values.put("subject", tokens[1].trim());
-                values.put("option1", tokens[2].trim());
-                values.put("option2", tokens[3].trim());
-                values.put("option3", tokens[4].trim());
-                values.put("answer", tokens[5].trim());
+
+                // Ignore tokens[0] because it is the exported ID
+                // SQLite will create a new ID automatically
+                values.put("question", tokens[1].trim());
+                values.put("subject", tokens[2].trim());
+                values.put("option1", tokens[3].trim());
+                values.put("option2", tokens[4].trim());
+                values.put("option3", tokens[5].trim());
+                values.put("answer", tokens[6].trim());
 
                 long result = DB.insert("Questions", null, values);
+
                 if (result == -1) {
                     allInserted = false;
                 }

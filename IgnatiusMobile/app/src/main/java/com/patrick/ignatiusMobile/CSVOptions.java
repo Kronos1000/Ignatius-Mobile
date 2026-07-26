@@ -24,11 +24,10 @@ public class CSVOptions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_csvoptions); // Ensure this matches your updated XML file
+        setContentView(R.layout.activity_csvoptions);
 
         DB = new DBHelper(this);
 
-        // If you want to handle clicks from the ListView items:
         ListView optionsList = findViewById(R.id.list_options);
         optionsList.setOnItemClickListener((parent, view, position, id) -> {
             switch (position) {
@@ -79,6 +78,7 @@ public class CSVOptions extends AppCompatActivity {
 
     private boolean exportCSVToUri(Uri uri) {
         Cursor cursor = DB.getdata();
+
         if (cursor == null || cursor.getCount() == 0) {
             Toast.makeText(this, "No data to export", Toast.LENGTH_SHORT).show();
             return false;
@@ -87,9 +87,13 @@ public class CSVOptions extends AppCompatActivity {
         try (OutputStream outputStream = getContentResolver().openOutputStream(uri);
              BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream))) {
 
-            writer.write("question,subject,option1,option2,option3,answer\n");
+            // CSV Header (includes ID)
+            writer.write("id,question,subject,option1,option2,option3,answer\n");
 
             while (cursor.moveToNext()) {
+
+                int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+
                 String question = cursor.getString(cursor.getColumnIndexOrThrow("question")).replace(",", " ");
                 String subject = cursor.getString(cursor.getColumnIndexOrThrow("subject")).replace(",", " ");
                 String option1 = cursor.getString(cursor.getColumnIndexOrThrow("option1")).replace(",", " ");
@@ -97,8 +101,14 @@ public class CSVOptions extends AppCompatActivity {
                 String option3 = cursor.getString(cursor.getColumnIndexOrThrow("option3")).replace(",", " ");
                 String answer = cursor.getString(cursor.getColumnIndexOrThrow("answer")).replace(",", " ");
 
-                writer.write(String.format("%s,%s,%s,%s,%s,%s\n",
-                        question, subject, option1, option2, option3, answer));
+                writer.write(String.format("%d,%s,%s,%s,%s,%s,%s\n",
+                        id,
+                        question,
+                        subject,
+                        option1,
+                        option2,
+                        option3,
+                        answer));
             }
 
             writer.flush();
@@ -108,6 +118,10 @@ public class CSVOptions extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
             return false;
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
         }
     }
 }
